@@ -1,6 +1,6 @@
 # Taxes
 
-Crater makes it really easy to manage taxes. You can add multiple taxes on Total Invoice Amount or on Per-Item basis.
+InvoiceShelf makes it really easy to manage taxes. You can add multiple taxes on Total Invoice Amount or on Per-Item basis.
 
 To get started with taxes, you just need to add a new Tax Type with name of Tax & Percentage on the `Settings -> Tax Types` page. After adding a Tax Type, you can apply the newly added tax to an Invoice.
 
@@ -29,7 +29,7 @@ Note that you cannot remove a Tax Type which has already been applied to an invo
 
 A Compound Tax, also known as a Stacked Tax, is a tax that is calculated on top of one or more Simple taxes.
 
-You can select whether a Tax is supposed to be calculated as Simple tax or Compound tax when adding a new Tax Type on crater.
+You can select whether a Tax is supposed to be calculated as Simple tax or Compound tax when adding a new Tax Type on InvoiceShelf.
 
 ##### Example:
 

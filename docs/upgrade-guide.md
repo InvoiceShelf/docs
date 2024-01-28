@@ -11,7 +11,7 @@ Take a backup of your Database & `/storage/app` folder.
 
 ### Step 2 : Verify PHP Version
 
-Crater 4.0.0 version only works in PHP version >= 7.4.
+InvoiceShelf 4.0.0 version only works in PHP version >= 7.4.
 
 Please run `php -v` command to make sure that you're on the minimum supported version before you proceed to next step.
 
@@ -24,9 +24,9 @@ Run below commands in given order:
 ```
 docker-compose exec app composer update laravel/framework
 
-docker-compose exec app php artisan crater:update // For updating to Update to 3.2.0
+docker-compose exec app php artisan core:update // For updating to Update to 3.2.0
 
-docker-compose exec app php artisan crater:update // For updating to Update to 4.0.0
+docker-compose exec app php artisan core:update // For updating to Update to 4.0.0
 
 docker-compose exec app composer dump-autoload
 
@@ -39,9 +39,9 @@ docker-compose exec app php artisan migrate
 ```
 composer update laravel/framework
 
-php artisan crater:update // For updating to Update to 3.2.0
+php artisan core:update // For updating to Update to 3.2.0
 
-php artisan crater:update // For updating to Update to 4.0.0
+php artisan core:update // For updating to Update to 4.0.0
 
 composer dump-autoload
 
@@ -49,9 +49,9 @@ php artisan migrate
 
 ```
 
-Please note that you will need to run `php artisan crater:update` twice in order to update from 3.1.1 to 4.0.0
+Please note that you will need to run `php artisan core:update` twice in order to update from 3.1.1 to 4.0.0
 
-Also, if you receive an error after running `php artisan crater:update`, please ignore the error and continue with `composer dump-autoload` command and then migrate command.
+Also, if you receive an error after running `php artisan core:update`, please ignore the error and continue with `composer dump-autoload` command and then migrate command.
 
 ### Step 4: Add Required Environment Variables
 
@@ -63,8 +63,8 @@ Update your .env file to include following variables:
 SESSION_DRIVER=cookie
 SESSION_LIFETIME=120
 
-SANCTUM_STATEFUL_DOMAINS=crater.test
-SESSION_DOMAIN=crater.test
+SANCTUM_STATEFUL_DOMAINS=invoiceshelf.test
+SESSION_DOMAIN=invoiceshelf.test
 ```
 
 `SANCTUM_STATEFUL_DOMAINS` & `SESSION_DOMAIN` variables should have domain on which you'll be accessing the application.
@@ -74,18 +74,18 @@ The above domain variables should not contain `http://` or `https://` in front o
 #### INCORRECT ❌
 
 ```
-SANCTUM_STATEFUL_DOMAINS=https://demo.craterapp.com
-SESSION_DOMAIN=https://demo.craterapp.com
+SANCTUM_STATEFUL_DOMAINS=https://demo.invoiceshelf.com
+SESSION_DOMAIN=https://demo.invoiceshelf.com
 ```
 
 #### CORRECT ✅
 
 ```
-SANCTUM_STATEFUL_DOMAINS=demo.craterapp.com
-SESSION_DOMAIN=demo.craterapp.com
+SANCTUM_STATEFUL_DOMAINS=demo.invoiceshelf.com
+SESSION_DOMAIN=demo.invoiceshelf.com
 ```
 
-Also if you've installed Crater on a different port, then `SANCTUM_STATEFUL_DOMAINS` should contain the port while `SESSION_DOMAIN` should not.
+Also if you've installed InvoiceShelf on a different port, then `SANCTUM_STATEFUL_DOMAINS` should contain the port while `SESSION_DOMAIN` should not.
 
 #### INCORRECT ❌
 
@@ -115,17 +115,17 @@ Take a backup of your Database, `.env` file & `/storage/app` folder.
 
 ### Step 2 : Verify PHP Version
 
-Crater 4.0.0 version only works in PHP version >= 7.4.
+InvoiceShelf 4.0.0 version only works in PHP version >= 7.4.
 
 Please run `php -v` command to make sure that you're on the minimum supported version before you proceed to next step.
 
 ### Step 3: Copy & Overwrite files
 
-Download the latest crater zip from https://crater.financial/open-source & copy + overwrite all the existing files & folders with the new ones except your `.env` file & `storage` folder.
+Download the latest InvoiceShelf zip from https://invoiceshelf.com/download & copy + overwrite all the existing files & folders with the new ones except your `.env` file & `storage` folder.
 
 --
 
-Optionally, you can also delete the whole crater folder and use the new folder from the zip file. After that's done, copy over your old `.env` & `/storage/app` folder.
+Optionally, you can also delete the whole invoiceshelf folder and use the new folder from the zip file. After that's done, copy over your old `.env` & `/storage/app` folder.
 
 ### Step 4: Add Required Environment Variables
 
@@ -137,8 +137,8 @@ Update your .env file to include following variables:
 SESSION_DRIVER=cookie
 SESSION_LIFETIME=120
 
-SANCTUM_STATEFUL_DOMAINS=crater.test
-SESSION_DOMAIN=crater.test
+SANCTUM_STATEFUL_DOMAINS=invoiceshelf.test
+SESSION_DOMAIN=invoiceshelf.test
 ```
 
 `SANCTUM_STATEFUL_DOMAINS` & `SESSION_DOMAIN` variables should have domain on which you'll be accessing the application.
@@ -148,18 +148,18 @@ The above domain variables should not contain `http://` or `https://` in front o
 #### INCORRECT ❌
 
 ```
-SANCTUM_STATEFUL_DOMAINS=https://demo.craterapp.com
-SESSION_DOMAIN=https://demo.craterapp.com
+SANCTUM_STATEFUL_DOMAINS=https://demo.invoiceshelf.com
+SESSION_DOMAIN=https://demo.invoiceshelf.com
 ```
 
 #### CORRECT ✅
 
 ```
-SANCTUM_STATEFUL_DOMAINS=demo.craterapp.com
-SESSION_DOMAIN=demo.craterapp.com
+SANCTUM_STATEFUL_DOMAINS=demo.invoiceshelf.com
+SESSION_DOMAIN=demo.invoiceshelf.com
 ```
 
-Also if you've installed Crater on a different port, then `SANCTUM_STATEFUL_DOMAINS` should contain the port while `SESSION_DOMAIN` should not.
+Also if you've installed InvoiceShelf on a different port, then `SANCTUM_STATEFUL_DOMAINS` should contain the port while `SESSION_DOMAIN` should not.
 
 #### INCORRECT ❌
 
@@ -177,7 +177,7 @@ SESSION_DOMAIN=localhost
 
 ### Step 4: Run Commands
 
-Run the below command from the root folder of Crater installation.
+Run the below command from the root folder of InvoiceShelf installation.
 
 ```
 php artisan migrate
@@ -185,7 +185,7 @@ php artisan migrate
 
 ---
 
-If you're using Crater on Docker, then you'll need to run it like this:
+If you're using InvoiceShelf on Docker, then you'll need to run it like this:
 
 ```
 docker-compose exec app php artisan migrate

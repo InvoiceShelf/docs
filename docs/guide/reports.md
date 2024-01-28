@@ -6,7 +6,7 @@ There are four different types of reports that can be used to generate a documen
 
 Using this report, you can get a detailed overview of your sales for a particular date-range.
 
-Crater provides 2 Sales Report Types:
+InvoiceShelf provides 2 Sales Report Types:
 
 #### By Customer
 

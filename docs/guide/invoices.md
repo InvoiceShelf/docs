@@ -6,7 +6,7 @@ You can access the invoices tab from the sidebar menu.
 
 An invoice can be created using one of the three pre-designed templates. You can add additional taxes to the invoice and also add it as a compound tax. Also, you can give a discount to your customer by percentage or fixed value.
 
-Note that crater supports per-item discounts as well as discounts on the total invoice value. You can change the setting from Settings -> Preferences page.
+Note that InvoiceShelf supports per-item discounts as well as discounts on the total invoice value. You can change the setting from Settings -> Preferences page.
 
 #### Invoice Fields:
 

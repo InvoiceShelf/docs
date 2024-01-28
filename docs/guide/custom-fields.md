@@ -15,7 +15,7 @@ You can manage your custom fields from Setting -> Custom Fields page.
 - **Name**: To identify the field.
 - **Model**: Specify whether the field should be added to Customer, Invoice, Estimate, Payment or Expense.
 - **Required**: Set whether the field is required or optional.
-- **Type**: Crater supports 10 types of custom fields (Text, Textarea, Phone, URL, Number, Select Field, Switch Toggle, Date, Time & Date + Time).
+- **Type**: InvoiceShelf supports 10 types of custom fields (Text, Textarea, Phone, URL, Number, Select Field, Switch Toggle, Date, Time & Date + Time).
 - **Label**: Label of the input field.
 - **Order** (Optional): Specify a lower value if you would like a field to appear first on the form.
 

@@ -33,33 +33,33 @@ ZIP PHP Extension
 
 ### Step 1 : Download
 
-[Download](http://crater.financial/open-source) the latest Crater package.
+[Download](http://invoiceshelf.com/download) the latest InvoiceShelf package.
 
 Alternatively, If you are a developer, follow the installation steps for your project on [this Link](./developer-guide.md)
 
 ### Step 2 : Upload to Server
 
-Upload the downloaded zip file to your Server and unzip it, you should see the Crater folder.
+Upload the downloaded zip file to your Server and unzip it, you should see the InvoiceShelf folder.
 
 ### Step 3 : Point the domain to the uploaded folder
 
-Point your domain or subdomain to the `public` directory inside the Crater folder.
+Point your domain or subdomain to the `public` directory inside the InvoiceShelf folder.
 
-Please note that, Crater must be installed on a primary domain or subdomain. Installing on a sub-folder will not work, for example:
+Please note that, InvoiceShelf must be installed on a primary domain or subdomain. Installing on a sub-folder will not work, for example:
 
-- `example.com/craterapp` (Invalid)
-- `localhost/crater` (Invalid)
+- `example.com/invoiceshelf` (Invalid)
+- `localhost/invoiceshelf` (Invalid)
 - `example.com` (Valid)
-- `crater.example.com` (Valid)
-- `crater.test` (Valid)
+- `invoiceshelf.example.com` (Valid)
+- `invoiceshelf.test` (Valid)
 
 ### Step 3: Fix File Permissions
 
-In your crater root folder, run command: `chmod -R 775 ./`
+In your InvoiceShelf root folder, run command: `chmod -R 775 ./`
 
 ### Step 4 : Complete installation wizard
 
-Open the link to the domain in the browser (Example: `https://demo.craterapp.com`) and complete the installation wizard as directed.
+Open the link to the domain in the browser (Example: `https://demo.invoiceshelf.com`) and complete the installation wizard as directed.
 
 ## Docker Installation
 
@@ -73,14 +73,18 @@ Install docker-compose by using this guide: [https://docs.docker.com/compose/ins
 
 ### Step 3 : Clone repository
 
-Clone the repository by running this command: `git clone https://github.com/crater-invoice/crater`
+Clone the repository by running this command: 
+
+```
+git clone https://github.com/InvoiceShelf/InvoiceShelf
+```
 
 ### Step 4 : Run below commands
 
 Change your current working directory and run your app using below commands:
 
 ```
-$ cd crater
+$ cd InvoiceShelf
 $ cp .env.example .env
 $ docker-compose up -d
 $ ./docker-compose/setup.sh
@@ -93,9 +97,9 @@ Open your web browser and go to your given domain (default: [http://localhost](h
 On Installation wizard - Database setup, use below credentials:
 
 - Database Host: `db`
-- Database Name: `crater`
-- Database Username: `crater`
-- Database Password: `crater`
+- Database Name: `invoiceshelf`
+- Database Username: `invoiceshelf`
+- Database Password: `invoiceshelf`
 
 ## Digital Ocean (Docker)
 
@@ -115,17 +119,17 @@ Clone the repository by running these commands:
 
 ```
 cd ~
-git clone https://github.com/crater-invoice/crater
+git clone https://github.com/InvoiceShelf/InvoiceShelf
 ```
 
 #### Step 2: Verify Permissions
 
-Please verify that your current user's UID matches with given UID on [docker-compose.yml](https://github.com/crater-invoice/crater/blob/master/docker-compose.yml#L8) file in the application's root folder:
+Please verify that your current user's UID matches with given UID on [docker-compose.yml](https://github.com/InvoiceShelf/InvoiceShelf/blob/master/docker-compose.yml#L8) file in the application's root folder:
 
 ```
     build:
       args:
-        user: crater-user
+        user: invoiceshelf-user
         uid: 1000
 ```
 
@@ -138,7 +142,7 @@ Hint: You can get the UID by running `id` command in the terminal (Note: If you 
 Change your current working directory and start containers using the given commands below:
 
 ```
-$ cd crater
+$ cd invoiceshelf
 $ cp .env.example .env
 $ docker-compose up -d
 ```
@@ -158,6 +162,6 @@ Open your web browser and go to your given domain and follow the installation wi
 On Installation wizard - Database setup, use below credentials:
 
 - Database Host: `db`
-- Database Name: `crater`
-- Database Username: `crater`
-- Database Password: `crater`
+- Database Name: `invoiceshelf`
+- Database Username: `invoiceshelf`
+- Database Password: `invoiceshelf`

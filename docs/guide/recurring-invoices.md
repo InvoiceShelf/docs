@@ -23,7 +23,7 @@ Below are the different statuses of a recurring invoice:
 
 ## Custom Frequency (Schedule):
 
-Crater supports creating recurring invoices based on a custom cron format. When you select Custom Format on _Frequency_ field, you can specify the expression yourself.
+InvoiceShelf supports creating recurring invoices based on a custom cron format. When you select Custom Format on _Frequency_ field, you can specify the expression yourself.
 
 A CRON expression is a string representing the schedule for a particular command to execute. The parts of a CRON schedule are as follows:
 
@@ -42,11 +42,11 @@ A CRON expression is a string representing the schedule for a particular command
 
 ## Server Configuration:
 
-In order for Crater to automatically create Invoices on a given schedule, you will need to configure your server to run the job every minute.
+In order for InvoiceShelf to automatically create Invoices on a given schedule, you will need to configure your server to run the job every minute.
 
 #### For Docker:
 
-Crater includes support for cron with docker on version 5.0.0 by default. If you're updating from a previous version, please take a backup of your database + files and re-run `docker-compose up`.
+InvoiceShelf includes support for cron with docker on version 5.0.0 by default. If you're updating from a previous version, please take a backup of your database + files and re-run `docker-compose up`.
 
 #### Other Providers:
 
@@ -59,7 +59,7 @@ You need to add a single cron configuration entry to the server that runs the sc
 Example command for a shared hosting provider like Godaddy:
 
 ```
- /usr/local/bin/php /home/myuser/public_html/crater/artisan schedule:run >> /dev/null 2>&1
+ /usr/local/bin/php /home/myuser/public_html/InvoiceShelf/artisan schedule:run >> /dev/null 2>&1
 ```
 
 #### Testing Locally:

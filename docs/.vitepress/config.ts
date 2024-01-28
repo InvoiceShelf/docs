@@ -2,9 +2,9 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.vuejs.org/config/app-configs
 export default defineConfig({
-    title: 'Crater Invoice - Open Source Documentation',
+    title: 'InvoiceShelf - Open Source Documentation',
     description:
-        'Crater is an open-source app made in Laravel, VueJS & React Native that helps you track expenses, payments & create professional invoices & estimates',
+        'InvoiceShelf is an open-source app made in Laravel, VueJS & React Native that helps you track expenses, payments & create professional invoices & estimates',
     head: [
         [
         'link',
@@ -54,12 +54,12 @@ export default defineConfig({
     ],    
     themeConfig: {
         siteTitle: false,
-        logo: '/images/crater-logo.png',
+        logo: '/images/logo.png',
         nav: [
             { text: 'Home', link: '/' },
-            { text: 'API Docs', link: 'http://api-docs.craterapp.com/' },
-            { text: 'Github', link: 'https://github.com/crater-invoice/crater' },
-            { text: 'Website', link: 'https://craterapp.com' },
+            { text: 'API Docs', link: 'http://api-docs.invoiceshelf.com/' },
+            { text: 'Github', link: 'https://github.com/InvoiceShelf/InvoiceShelf' },
+            { text: 'Website', link: 'https://invoiceshelf.com' },
         ],
         sidebar: [
             {

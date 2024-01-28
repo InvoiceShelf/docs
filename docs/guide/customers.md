@@ -24,6 +24,6 @@ You can also add a customer quickly by accessing the page by clicking the plus i
 
 All created customers are shown on the Customers page and you can easily edit or delete them as well. You can also use filters to quickly search for a particular customer by their Display Name, Contact Name & Phone number.
 
-Crater also supports deleting multiple customers at a time. To delete more than one customers, just select the customers and click on the Delete button from the Actions dropdown which is placed on the top-right corner of the table.
+InvoiceShelf also supports deleting multiple customers at a time. To delete more than one customers, just select the customers and click on the Delete button from the Actions dropdown which is placed on the top-right corner of the table.
 
 ![Customers Page](/images/customers.png)
