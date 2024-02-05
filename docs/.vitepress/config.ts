@@ -89,6 +89,7 @@ export default defineConfig({
                 items: [
                     { text: 'Developer Guide', link: '/developer-guide.md' },
                     { text: 'Upgrade Guide', link: '/upgrade-guide.md' },
+                    { text: 'Migration Guide', link: '/migration-guide.md' },
                     { text: 'Mobile App', link: '/mobile.md' },
                 ]
             }            
