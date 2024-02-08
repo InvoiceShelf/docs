@@ -14,7 +14,7 @@ lang: en-US
 ### Requirements
 
 ```
-PHP >= 7.4.0
+PHP >= 8.2.0
 BCMath PHP Extension
 Ctype PHP Extension
 cURL PHP Extension
@@ -76,40 +76,48 @@ Install docker-compose by using this guide: [https://docs.docker.com/compose/ins
 Clone the repository by running this command: 
 
 ```
-git clone https://github.com/InvoiceShelf/InvoiceShelf
+git clone https://github.com/InvoiceShelf/docker
 ```
 
-### Step 4 : Run below commands
+### Step 4 : Initial docker compose setup
 
 Change your current working directory and run your app using below commands:
 
 ```
-$ cd InvoiceShelf
-$ cp .env.example .env
-$ docker-compose up -d
-$ ./docker-compose/setup.sh
+$ cd docker
+$ cp docker-compose.yml.example docker-compose.yml
 ```
+
+### Step 5 : Finalize docker compose configuration
+
+```
+$ nano docker-compose.yml
+$ docker-compose up -d
+```
+
+**Note**: Before running `docker-compose up -d` you should configure your database and other variables in `docker-compose.yml`
 
 ### Step 5 : Complete installation wizard
 
-Open your web browser and go to your given domain (default: [http://localhost](http://localhost)) and follow the installation wizard.
+Open your web browser and go to your given domain (default: [http://localhost:90](http://localhost:90)) and follow the installation wizard.
 
 On Installation wizard - Database setup, use below credentials:
 
-- Database Host: `db`
+- Database Host: `invoiceshelf`
 - Database Name: `invoiceshelf`
 - Database Username: `invoiceshelf`
-- Database Password: `invoiceshelf`
+- Database Password: `<INVOICESHELF_PASSWORD>`
 
 ## Digital Ocean (Docker)
 
 ### Prerequisites
 
-- Access to an Ubuntu 18.04 local machine or development server as a non-root user with sudo privileges. If you’re using a remote server, it’s advisable to have an active firewall installed. To set these up, please refer to [Initial Server Setup Guide for Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-18-04) on Digital Ocean.
+- Access to an Ubuntu 22.04 local machine or development server as a non-root user with sudo privileges. If you’re using a remote server, it’s advisable to have an active firewall installed. To set these up, please refer to [Initial Server Setup Guide for Ubuntu 22.04](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-22-04) on Digital Ocean.
 
-- Docker installed on your server, following Steps 1 and 2 of [How To Install and Use Docker on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04).
+- Docker installed on your server, following Steps 1 and 2 of [How To Install and Use Docker on Ubuntu 22.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04).
 
-- Docker Compose must installed on your server. You can refer to this Guide: [How To Install Docker Compose on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-18-04).
+- Docker Compose must installed on your server. You can refer to this Guide: [How To Install and Use Docker Compose on Ubuntu 22.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-22-04).
+
 
 ### Installation
 
@@ -119,49 +127,35 @@ Clone the repository by running these commands:
 
 ```
 cd ~
-git clone https://github.com/InvoiceShelf/InvoiceShelf
+git clone https://github.com/InvoiceShelf/docker
 ```
 
-#### Step 2: Verify Permissions
-
-Please verify that your current user's UID matches with given UID on [docker-compose.yml](https://github.com/InvoiceShelf/InvoiceShelf/blob/master/docker-compose.yml#L8) file in the application's root folder:
-
-```
-    build:
-      args:
-        user: invoiceshelf-user
-        uid: 1000
-```
-
-If it doesn't match, Update the compose.yml file before going ahead with step 3.
-
-Hint: You can get the UID by running `id` command in the terminal (Note: If you don't do this step correctly, then you may get an error on step 4).
-
-#### Step 3 : Setup docker containers
+#### Step 2 : Initial docker compose setup
 
 Change your current working directory and start containers using the given commands below:
 
 ```
-$ cd invoiceshelf
-$ cp .env.example .env
+$ cd docker
+$ cp docker-compose.yml.example docker-compose.yml
+```
+
+
+#### Step 3 : Finalize docker compose configuration
+
+To change the application configuration, you should edit `docker-compose.yml` and after that run it as follows:
+
+```
+$ nano docker-compose.yml
 $ docker-compose up -d
 ```
 
-#### Step 4 : Install composer depencies & generate app key
-
-Now wait for a few minutes until the containers are built and started. After that run the below script command to install composer dependencies & generate unique application key:
-
-```
-$ ./docker-compose/setup.sh
-```
-
-#### Step 5 : Complete installation wizard
+#### Step 4 : Complete installation wizard
 
 Open your web browser and go to your given domain and follow the installation wizard.
 
 On Installation wizard - Database setup, use below credentials:
 
-- Database Host: `db`
+- Database Host: `invoiceshelf`
 - Database Name: `invoiceshelf`
 - Database Username: `invoiceshelf`
-- Database Password: `invoiceshelf`
+- Database Password: `<INVOICESHELF_PASSWORD>`
