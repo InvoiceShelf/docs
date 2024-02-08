@@ -99,7 +99,7 @@ $ docker-compose up -d
 
 ### Step 5 : Complete installation wizard
 
-Open your web browser and go to your given domain (default: [http://localhost:90](http://localhost:90)) and follow the installation wizard.
+Open your web browser and go to your given domain (default: localhost:90) and follow the installation wizard.
 
 On Installation wizard - Database setup, use below credentials:
 
