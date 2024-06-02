@@ -103,7 +103,7 @@ Open your web browser and go to your given domain (default: localhost:90) and fo
 
 On Installation wizard - Database setup, use below credentials:
 
-- Database Host: `invoiceshelf`
+- Database Host: `invoiceshelf_db`
 - Database Name: `invoiceshelf`
 - Database Username: `invoiceshelf`
 - Database Password: `<INVOICESHELF_PASSWORD>`
