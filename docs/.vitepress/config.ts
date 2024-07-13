@@ -68,6 +68,7 @@ export default defineConfig({
                     { text: 'Installation', link: '/installation.md' },
                     { text: 'Dashboard', link: '/guide/dashboard.md' },
                     { text: 'Customers', link: '/guide/customers.md' },
+                    { text: 'Customer portal', link: '/guide/customer-portal.md' },
                     { text: 'Items', link: '/guide/items.md' },
                     { text: 'Estimates', link: '/guide/estimates.md' },
                     { text: 'Invoices', link: '/guide/invoices.md' },
