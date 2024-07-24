@@ -55,9 +55,36 @@ Please note that, InvoiceShelf must be installed on a primary domain or subdomai
 
 ### Step 3: Fix File Permissions
 
-In your InvoiceShelf root folder, run command: `chmod -R 775 ./`
+It is important to set the correct permissions for the storage and bootstrap/cache directories to ensure the application can write to these locations. Here are the steps:
 
-### Step 4 : Complete installation wizard
+1. Set Permissions: In your root directory, run the following commands to set the appropriate permissions:
+
+```sh
+chmod -R 775 storage
+chmod -R 775 bootstrap/cache
+```
+
+2. Change Ownership (Optional): Additionally, you may need to change the ownership of these directories to the web server user (e.g., www-data for Apache/Nginx on Linux systems):
+
+```sh
+chown -R www-data:www-data storage
+chown -R www-data:www-data bootstrap/cache
+```
+
+### Step 4 : Copy Environment File
+
+1. Locate the Example File: In the root directory of your project, find the file named `.env.example`.
+2. Copy the `.env.example` file and create a new file named `.env` in the same root directory.
+
+```sh
+cp .env.example .env
+```
+
+By following these steps, you will create a new `.env` file that can be customized with your environment-specific settings.
+
+> For example, you can change the default SQLite database to MySQL or PostgreSQL.
+
+### Step 5 : Complete installation wizard
 
 Open the link to the domain in the browser (Example: `https://demo.invoiceshelf.com`) and complete the installation wizard as directed.
 
