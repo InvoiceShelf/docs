@@ -33,9 +33,9 @@ ZIP PHP Extension
 
 ### Step 1 : Download
 
-[Download](http://invoiceshelf.com/download) the latest InvoiceShelf package.
+[Download](http://invoiceshelf.com/) the latest InvoiceShelf package.
 
-Alternatively, If you are a developer, follow the installation steps for your project on [this Link](./developer-guide.md)
+Alternatively, If you are a developer, follow the instructions to setup development environment on [this Link](./developer-guide.md)
 
 ### Step 2 : Upload to Server
 
@@ -94,95 +94,45 @@ Open the link to the domain in the browser (Example: `https://demo.invoiceshelf.
 
 Install Docker on your host: [https://docs.docker.com/install/](https://docs.docker.com/install/)
 
-### Step 2 : Install Docker Compose
+### Step 2 : Clone repository
 
-Install docker-compose by using this guide: [https://docs.docker.com/compose/install/](https://docs.docker.com/compose/install/)
-
-### Step 3 : Clone repository
-
-Clone the repository by running this command: 
+Open terminal and clone the repository by running:
 
 ```
 git clone https://github.com/InvoiceShelf/docker
 ```
 
-### Step 4 : Initial docker compose setup
+### Step 3 : Initial docker compose setup
 
-Change your current working directory and run your app using below commands:
+Navigate to the cloned repository folder (`docker`) and copy one of the example files (docker-compose.{db}.yml) to docker-compose.yml
+
+If you want to use MySQL, take `docker-compose.mysql.yml` and copy it to `docker-compose.yml` in the same folder.
+
+This will make it possible to run `docker compose up/down` commands without specifying `-f path/to/docker-compose.yml` in the `docker` folder.
+
+### Step 4 : Finalize docker compose configuration
+
+Edit `docker-compose.yml` and adjust the configuration as per your needs.
+
+And finally, open Terminal in the `docker` folder and spin up InvoiceShelf app:
 
 ```
-$ cd docker
-$ cp docker-compose.yml.example docker-compose.yml
+$ docker compose up -d
 ```
-
-### Step 5 : Finalize docker compose configuration
-
-```
-$ nano docker-compose.yml
-$ docker-compose up -d
-```
-
-**Note**: Before running `docker-compose up -d` you should configure your database and other variables in `docker-compose.yml`
 
 ### Step 5 : Complete installation wizard
 
-Open your web browser and go to your given domain (default: localhost:90) and follow the installation wizard.
-
-On Installation wizard - Database setup, use below credentials:
-
-- Database Host: `invoiceshelf_db`
-- Database Name: `invoiceshelf`
-- Database Username: `invoiceshelf`
-- Database Password: `<INVOICESHELF_PASSWORD>`
-
-## Digital Ocean (Docker)
-
-### Prerequisites
-
-- Access to an Ubuntu 22.04 local machine or development server as a non-root user with sudo privileges. If you’re using a remote server, it’s advisable to have an active firewall installed. To set these up, please refer to [Initial Server Setup Guide for Ubuntu 22.04](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-22-04) on Digital Ocean.
-
-- Docker installed on your server, following Steps 1 and 2 of [How To Install and Use Docker on Ubuntu 22.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04).
-
-- Docker Compose must installed on your server. You can refer to this Guide: [How To Install and Use Docker Compose on Ubuntu 22.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-22-04).
-
-
-### Installation
-
-#### Step 1 : Clone repository
-
-Clone the repository by running these commands:
-
-```
-cd ~
-git clone https://github.com/InvoiceShelf/docker
-```
-
-#### Step 2 : Initial docker compose setup
-
-Change your current working directory and start containers using the given commands below:
-
-```
-$ cd docker
-$ cp docker-compose.yml.example docker-compose.yml
-```
-
-
-#### Step 3 : Finalize docker compose configuration
-
-To change the application configuration, you should edit `docker-compose.yml` and after that run it as follows:
-
-```
-$ nano docker-compose.yml
-$ docker-compose up -d
-```
-
-#### Step 4 : Complete installation wizard
-
 Open your web browser and go to your given domain and follow the installation wizard.
 
-On Installation wizard - Database setup, use below credentials:
+##### MySQL/PostgresSQL
+
+For MySQL or PostgreSQL, you can use the following Database setup:
 
 - Database Host: `invoiceshelf`
 - Database Name: `invoiceshelf`
 - Database Username: `invoiceshelf`
-- Database Password: `<INVOICESHELF_PASSWORD>`
+- Database Password: `somepass` (exactly, as define MYSQL_PASSWORD in docker-compose.yml)
+
+##### SQLite
+
+For SQLite, please leave the database.sqlite path as is and proceed.
