@@ -31,7 +31,7 @@ ZIP PHP Extension
 
 [Download](http://invoiceshelf.com/) the latest InvoiceShelf package.
 
-Alternatively, If you are a developer, follow the instructions to setup development environment on [this Link](./developer-guide.md)
+Alternatively, If you are a developer, follow the instructions to setup development environment on [this Link](../developer-guide.md)
 
 ## Step 2 : Upload to Server
 
