@@ -34,9 +34,16 @@ nvm use 20
 
 ## Step 2 : Clone the Repository
 
+If you forked the project, you can use the fork url instead.
+
 ```bash
-git clone https://github.com/InvoiceShelf/InvoiceShelf.git
+git clone https://github.com/InvoiceShelf/InvoiceShelf.git 
 cd InvoiceShelf
+```
+
+If you are using Linux/macOS, you need to setup the correct permissions:
+```bash
+chmod 775 storage/framework storage/logs bootstrap/cache
 ```
 
 ## Step 3 : Set Up Environment Variables
