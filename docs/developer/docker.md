@@ -55,9 +55,39 @@ Once the environment is up and running you have the following containers:
 
 Once the containers are up and running, you can access the InvoiceShelf application in your browser at [http://invoiceshelf.test](http://invoiceshelf.test).
 
+
+## Useful details
+
+### a.) Working with composer/npm/phpunit
+
+To access `composser`, `npm`, `vendor/bin/pint`, `vendor/bin/pest`, you need to SSH into the `invoiceshelf-dev-php` container as follows:
+
+```bash
+docker exec -it --user invoiceshelf invoiceshelf-dev-php /bin/bash
+```
+
+### b.) Previewing the database
+
+To see the database we use a tool called Adminer.
+
+You can open it at http://invoiceshelf.test:8080
+
+You can log in with the database details as [explained here](https://github.com/InvoiceShelf/InvoiceShelf/blob/develop/.dev/README.md#2-databases).
+
+
+### c.) Previewing Mail
+
+To see the mail we use a tool called Mailpit. 
+
+You can open it at http://invoiceshelf.test:8025
+
 ---
 
-For more details, refer to the [Docker setup README](https://github.com/InvoiceShelf/InvoiceShelf/blob/master/.dev/README.md).
+&nbsp;
+
+For more details, refer to the [Docker setup README](https://github.com/InvoiceShelf/InvoiceShelf/blob/develop/.dev/README.md).
+
+&nbsp;
 
 ---
 
