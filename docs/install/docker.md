@@ -5,7 +5,7 @@ lang: en-US
 
 # Docker Installation
 
-We pre-configured [Docker image](https://hub.docker.com/r/invoiceshelf/invoiceshelf) that can be run on your computer or cloud server.
+We have pre-configured [Docker image](https://hub.docker.com/r/invoiceshelf/invoiceshelf) that can be run on your computer or cloud server.
 
 Follow the steps bellow to get started.
 
