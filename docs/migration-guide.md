@@ -1,4 +1,9 @@
-# Migration
+---
+title: Migration Guide
+lang: en-US
+---
+
+# Migration Guide
 
 This page explains how to migrate from the now abandoned Crater project.
 

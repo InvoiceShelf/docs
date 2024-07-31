@@ -7,10 +7,20 @@ lang: en-US
 
 InvoiceShelf can be installed with Docker or Manually.
 
-We usually recommend Docker, if you need specific setup you can run it manually.
+We usually recommend Docker because it is automatically packaged with all the required tools needed to run InvoiceShelf correct.
 
-Installation guides:
 
-- [Docker Installation](./install/docker.md)
-- [Manual Installation](./install/manual.md)
+## Docker Installation
+
+You can find more details about Docker Installation on the link below.
+
+[[Learn More]](./install/docker.md)
+
+## Manual Installation
+
+You can find more details about Manual Installation on the link below.
+
+[[Learn More]](./install/manual.md)
+
+
 

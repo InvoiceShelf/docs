@@ -63,9 +63,16 @@ export default defineConfig({
         ],
         sidebar: [
             {
-                text: 'Guide',
+                text: 'Get Started',
                 items: [
                     { text: 'Installation', link: '/installation.md' },
+                    { text: 'Developers', link: '/developer-guide.md' },
+                    { text: 'Migration', link: '/migration-guide.md' },
+                ]
+            },
+            {
+                text: 'Documentation',
+                items: [
                     { text: 'Dashboard', link: '/guide/dashboard.md' },
                     { text: 'Customers', link: '/guide/customers.md' },
                     { text: 'Customer portal', link: '/guide/customer-portal.md' },
@@ -85,14 +92,6 @@ export default defineConfig({
                     { text: 'Settings', link: '/guide/settings.md' },
                 ]
             },
-            {
-                text: 'Other',
-                items: [
-                    { text: 'Developer Guide', link: '/developer/index.md' },
-                    { text: 'Migration Guide', link: '/migration-guide.md' },
-                    { text: 'Mobile App', link: '/mobile.md' },
-                ]
-            }            
         ],
     },
 })
