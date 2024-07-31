@@ -68,6 +68,7 @@ export default defineConfig({
                     { text: 'Installation', link: '/installation.md' },
                     { text: 'Developers', link: '/developer-guide.md' },
                     { text: 'Migration', link: '/migration-guide.md' },
+                    { text: 'Translations', link: '/translation-guide.md' }
                 ]
             },
             {
