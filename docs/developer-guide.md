@@ -13,20 +13,20 @@ There are three primary ways to install and set up InvoiceShelf for development:
 
 If you want to use the pre-configured Docker dev environment
 
-[[Read more]](./docker.md)
+[[Read more]](./developer/docker.md)
 
 
 ## Laravel Herd
 
 If you want to use Laravel Herd on your Windows/Mac machine
 
-[[Read more]](./laravel-herd.md)
+[[Read more]](./developer/laravel-herd.md)
 
 ## Manual Nginx/php-fpm
 
 If you want to install InvoiceShelf on plain Linux Debian/Ubuntu
 
-[[Read more]](./manual.md)
+[[Read more]](./developer/manual.md)
 
 &nbsp;
 
