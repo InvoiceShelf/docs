@@ -69,7 +69,7 @@ chown -R www-data:www-data bootstrap/cache
 
 ## Step 4: Add cron file
 
-Create a new cron file as `/etc/cron.d/invoiceshelf` wwith the followwing line:
+Create a new cron file as `/etc/cron.d/invoiceshelf` with the following line:
 
 ```cron
 * * * * * /usr/bin/php /path/to/your/install/artisan schedule:run >> /dev/null 2>&1
