@@ -27,17 +27,17 @@ XML PHP Extension
 ZIP PHP Extension
 ```
 
-## Step 1 : Download
+## Step 1: Download
 
 [Download](http://invoiceshelf.com/) the latest InvoiceShelf package.
 
 Alternatively, If you are a developer, follow the instructions to setup development environment on [this Link](../developer-guide.md)
 
-## Step 2 : Upload to Server
+## Step 2: Upload to Server
 
 Upload the downloaded zip file to your Server and unzip it, you should see the InvoiceShelf folder.
 
-## Step 3 : Point the domain to the uploaded folder
+## Step 3: Point the domain to the uploaded folder
 
 Point your domain or subdomain to the `public` directory inside the InvoiceShelf folder.
 
@@ -67,7 +67,23 @@ chown -R www-data:www-data storage
 chown -R www-data:www-data bootstrap/cache
 ```
 
-## Step 4 : Copy Environment File
+## Step 4: Add cron file
+
+Create a new cron file as `/etc/cron.d/invoiceshelf` wwith the followwing line:
+
+```cron
+* * * * * /usr/bin/php /path/to/your/install/artisan schedule:run >> /dev/null 2>&1
+```
+
+## Step 5: Link the storage directory
+
+For media (images, PDFs...) to function properly, you must initialize the link to the storage folder using this command:
+
+```sh
+php artisan storage:link
+```
+
+## Step 6: Copy Environment File
 
 1. Locate the Example File: In the root directory of your project, find the file named `.env.example`.
 2. Copy the `.env.example` file and create a new file named `.env` in the same root directory.
@@ -83,11 +99,10 @@ php artisan key:generate
 
 or generate it manually on the [following link](https://generate-random.org/laravel-key-generator).
 
-
 By following these steps, you will create a new `.env` file that can be customized with your environment-specific settings.
 
 > For example, you can change the default SQLite database to MySQL or PostgreSQL.
 
-## Step 5 : Complete installation wizard
+## Step 7: Complete installation wizard
 
 Open the link to the domain in the browser (Example: `https://demo.invoiceshelf.com`) and complete the installation wizard as directed.
