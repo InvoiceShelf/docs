@@ -59,9 +59,9 @@ Open the newly created `docker-compose.yml` in your editor of choice and adjust 
 
 > 📝 NOTE
 >
-> You can simply run the `docker compose -f docker-compose.XXX.yml up -d` (where XXX is the Database type of your choice) if you only want to trial the invoiceShelf without committing to a more permanent setup.
+> You can simply run the `docker compose -f docker-compose.XXX.yml up -d` (where XXX is the Database type of your choice) if you only want to trial the invoiceShelf, without committing to a more permanent setup.
 >
-> You can ever remove `-d` (detached mode) so it only runs while you have the terminal open, though you will still need to manually clean-up the containers and images once you are done.
+> You can even remove `-d` (detached mode) so it only runs while you have the terminal open, though you will still need to manually clean-up the containers and images once you are done.
 
 ```yml
 ## truncated generic example `docker-compose.yml`
@@ -88,13 +88,13 @@ services:
       - APP_DEBUG=true
 
       ## If you are running in production and have a domain make sure to set an
-      ##  actual domain name otherwise you will get CSRF error on login.
-      ## Also make sure to update these values if you ever change the domain name.
+      ##  actual domain name, otherwise you will get CSRF error on login.
+      ## Also, make sure to update these values if you ever change the domain name.
       - APP_URL=http://localhost:90            # Set to https if using SSL.
       - SESSION_DOMAIN=localhost               # Enter just the domain name.
       - SANCTUM_STATEFUL_DOMAINS=localhost:90  # Enter the domain name and a custom port.
 
-      ## Uncomment and set your smtp or other provider (ensure to use the same
+      ## Uncomment and set your SMTP or other provider (ensure to use the same
       ##  as during the setup)
       - MAIL_DRIVER=smtp
       - MAIL_HOST=smtp.mailtrap.io
@@ -126,7 +126,7 @@ Open your web browser and go to your the url defined in your `APP_URL`, and foll
 
 > 📝 NOTE
 >
-> In the future this section will not be necessary as we will implement a docker install detection system.
+> In the future this section will not be necessary, as we will implement a docker install detection system.
 
 > ⚠️ IMPORTANT
 >
