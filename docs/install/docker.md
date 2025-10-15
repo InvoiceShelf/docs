@@ -59,3 +59,15 @@ For MySQL or PostgreSQL, you can use the following Database setup:
 ##### 5.2. SQLite Database
 
 Leave the `database.sqlite` path as is, otherwise it will NOT work correctly.
+
+##### 5.3 Reverse Proxy Suggestions
+
+For spinning up the Docker Compose stack using reverse proxies and your own domain, it is highly suggested to set up the following docker enviromental variables:
+
+```
+APP_URL=https://<subdomain-if-any>.<domain>.<ltd> # Be sure to include http(s):// part!
+SESSION_DOMAIN=.<yourdomain>.<ltd>  # Mind the first dot! 
+SANCTUM_STATEFUL_DOMAINS=<subdomain-if-any>.<domain>.<ltd> # Ensure you have NOT set up http(s):// part there!
+```
+Setting up these enviromental variables allows you to do the Domain Verification step with no errors at domain checks.
+
