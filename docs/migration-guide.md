@@ -16,6 +16,6 @@ Step by step:
 3. Copy the old Crater's installation `storage` directory to InvoiceShelf website directory
 4. Copy .env file from Crater's installation directory to InvoiceShelf website directory
 5. Update .env and change it according to your wish, ultimately compare it with .env.example and see if you are missing anything.
-6. Run `php artisan migrate` from the InvoiceShelf website directory
+6. Run `php artisan migrate` and `php artisan storage:link` from the InvoiceShelf website directory
 
 That's it! You are done.
