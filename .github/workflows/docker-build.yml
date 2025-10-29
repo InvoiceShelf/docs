@@ -5,6 +5,11 @@ on:
     branches:
       - master
       - '**'
+    paths-ignore:
+      - '.gitignore'
+      - 'docker-compose*.yml'
+      - '*.md'
+      - '!docs/**/*.md'
 
 jobs:
   build-and-push:
