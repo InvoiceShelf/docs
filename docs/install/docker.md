@@ -59,3 +59,38 @@ For MySQL or PostgreSQL, you can use the following Database setup:
 ##### 5.2. SQLite Database
 
 Leave the `database.sqlite` path as is, otherwise it will NOT work correctly.
+
+##### 5.3 Reverse Proxy Requirements
+
+For spinning up the Docker Compose stack using reverse proxies and your own domain, the following environment variables are **required**:
+
+###### APP_URL
+- The full public URL (including protocol and port) where your application is accessed
+- Used for generating absolute URLs and redirects
+- **Format**: `https://<subdomain-if-any>.<domain>.<tld>`
+- **Examples**: 
+  - `APP_URL=https://invoiceshelf.acme.com` (production)
+  - `APP_URL=https://acme.com` (production)
+  - `APP_URL=http://192.168.1.200` (development)
+  - `APP_URL=http://192.168.1.200:8080` (development with custom port)
+
+###### SESSION_DOMAIN  
+- The domain used for session cookies
+- **With leading dot (.)**: Allows cookies across all subdomains (e.g., `.acme.com`)
+- **Without dot**: Restricts cookies to specific domain only (e.g., `invoiceshelf.acme.com`)
+- **Note**: Include port if using non-standard ports
+- **Format**: `.<yourdomain>.<tld>` (note the leading dot for subdomain support)
+- **Examples**:
+  - `SESSION_DOMAIN=.acme.com` (with dot for subdomain support)
+  - `SESSION_DOMAIN=invoiceshelf.acme.com` (without dot for specific domain)
+
+###### SANCTUM_STATEFUL_DOMAINS
+- Comma-separated list of domains allowed to manage stateful sessions
+- Typically includes your frontend domain(s) and ports
+- **Format**: Comma-separated list of domains
+- **Examples**:
+  - `SANCTUM_STATEFUL_DOMAINS=invoiceshelf.acme.com`
+  - `SANCTUM_STATEFUL_DOMAINS=invoiceshelf.acme.com,invoiceshelf.acme.com:8080`
+  - `SANCTUM_STATEFUL_DOMAINS=localhost,localhost:3000,invoiceshelf.acme.com`
+
+**Important**: Restart the application after modifying these variables in `docker-compose.yaml`.
