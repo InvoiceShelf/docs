@@ -40,7 +40,7 @@ sqlite3 database.sqlite < sqlite-sqlite-database.sql
 #### Step 3: Copy the Database to Docker Container
 
 ```
-docker cp /path/database.sqlite invoiceshelf:/var/www/html/database/database.sqlite
+docker cp /path/database.sqlite invoiceshelf:/var/www/html/storage/app/database.sqlite
 ```
 
 #### Step 4: Restart the container
