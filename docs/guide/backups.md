@@ -27,7 +27,7 @@ Extract the downloaded backup file to find the `SQL` file inside the `db_dumps` 
 
 `scp sqlite-sqlite-database.sql user@server:/path`
 
-##### Step 2: Create Database from Dump
+##### Step 2: Recreate Database from Dump
 
 Make sure SQLite is installed on the server.
 
