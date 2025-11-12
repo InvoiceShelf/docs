@@ -25,20 +25,28 @@ Create a new backup from Settings -> Backups page or download previous backups.
 ##### Step 1: Copy Dump
 Extract the downloaded backup file to find the `SQL` file inside the `db_dumps` folder. Copy it to the server.
 
-`scp sqlite-sqlite-database.sql user@server:/path`
+```
+scp sqlite-sqlite-database.sql user@server:/path
+```
 
 ##### Step 2: Recreate Database from Dump
 
 Make sure SQLite is installed on the server.
 
-`sqlite3 database.sqlite < sqlite-sqlite-database.sql`
+```
+sqlite3 database.sqlite < sqlite-sqlite-database.sql
+```
 
 #### Step 3: Copy the Database to Docker Container
 
-`docker cp /path/database.sqlite invoiceshelf:/var/www/html/database/database.sqlite`
+```
+docker cp /path/database.sqlite invoiceshelf:/var/www/html/database/database.sqlite
+```
 
 #### Step 4: Restart the container
 
-`docker compose restart`
+```
+docker compose restart
+```
 
 
