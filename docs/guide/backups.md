@@ -18,7 +18,7 @@ Create a new backup from Settings -> Backups page or download previous backups.
 ### For Docker-based installation
 
 > [!NOTE]
-> Ensure InvoiceShelf is installed on your target system or server before restoring from a backup. For most users, restoring the database alone is sufficient (e.g., to restore data such as customers, invoices, payments, etc.).
+> Ensure InvoiceShelf is installed on your target system or server, preferably with the same `docker-compose` as the previous server, before restoring from a backup. For most users, restoring the database alone is sufficient (e.g., to restore data such as customers, invoices, payments, etc.).
 
 #### Restoring Database (SQLite)
 
