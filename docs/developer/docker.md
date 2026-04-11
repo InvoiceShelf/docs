@@ -48,7 +48,7 @@ Add the following line at the end of the hosts file to make the invoiceshelf.tes
 To spin up the Docker environment, run:
 
 ```bash
-docker compose -f .dev/docker-compose.mysql.yml up --build
+docker compose -f docker/development/docker-compose.mysql.yml up --build
 ```
 
 Once the environment is up and running you have the following containers:
