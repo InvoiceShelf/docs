@@ -43,7 +43,7 @@ Create a `.blade.php` file in the directory for its type:
 
 Any `.blade.php` file in those directories is picked up automatically and offered in the **Choose a Template** dialog.
 
-Add a `.png` alongside it with the same name to give it a thumbnail there. Without one the tile renders blank, so it is worth adding even if you just copy the built-in preview.
+Add a `.png` alongside it with the same name to control the thumbnail shown there. Without one, the preview of the built-in design is used instead.
 
 ![Custom Templates](/images/custom-templates.png)
 
@@ -57,20 +57,63 @@ The quickest way to iterate is the `?preview` query parameter on the document's 
 /invoices/pdf/{hash}?preview=true
 ```
 
-## The shared line-items table
+## The line-items table
 
-The built-in designs pull their line-items table from a partial, and a cloned template includes it too:
+The built-in designs pull their line-items table from a partial, and a cloned template gets its own copy:
 
 ```blade
-@include('pdf_templates::invoice.partials.table')
+@include('pdf_templates::invoice.partials.your-template-name.table')
 ```
 
-::: warning One table, shared by all your custom templates
-That partial is written once, the first time you create a custom template of a type, and every later one of that type includes the *same* file. Editing
-`storage/app/templates/pdf/invoice/partials/table.blade.php` changes the table for **all** your custom invoice templates, not just the one you are working on.
+It belongs to that template alone, so editing it does not affect your other designs.
 
-If you need different tables, point each template at its own copy: create a second file next to it and change that template's `@include` to match.
+## Repeating page headers and footers
+
+A file named after your template with a `_header` or `_footer` suffix is repeated on every page:
+
+```
+storage/app/templates/pdf/invoice/branded.blade.php
+storage/app/templates/pdf/invoice/branded_header.blade.php
+storage/app/templates/pdf/invoice/branded_footer.blade.php
+```
+
+These companions do not appear in the template picker; they belong to the template they are named after.
+
+::: warning Gotenberg only
+Repeating page furniture is a Chromium capability, so it applies when the Gotenberg driver is selected. dompdf has no equivalent.
 :::
+
+They are drawn *inside* the page margin, so give the relevant margin room under **Settings → PDF Generation**, and style them inline — Chromium renders them in their own context and they inherit none of the document's CSS:
+
+```html
+<div style="font-size:9px;width:100%;padding:0 15mm;text-align:right;">
+  Page <span class="pageNumber"></span> of <span class="totalPages"></span>
+</div>
+```
+
+`pageNumber` and `totalPages` are substituted by the browser. If you only want page numbers, turn them on under **Settings → PDF Generation** instead of writing a footer.
+
+## Overriding payment receipts and reports
+
+Payment receipts and the five reports have no picker: there is one design, and a custom file replaces it outright. Name the file after the document you are replacing:
+
+| Document | File |
+|---|---|
+| Payment receipt | `storage/app/templates/pdf/payment/payment.blade.php` |
+| Expenses report | `storage/app/templates/pdf/reports/expenses.blade.php` |
+| Profit & loss | `storage/app/templates/pdf/reports/profit-loss.blade.php` |
+| Sales by customer | `storage/app/templates/pdf/reports/sales-customers.blade.php` |
+| Sales by item | `storage/app/templates/pdf/reports/sales-items.blade.php` |
+| Tax summary | `storage/app/templates/pdf/reports/tax-summary.blade.php` |
+
+`make:template` clones these too:
+
+```bash
+php artisan make:template expenses --type=reports
+php artisan make:template payment --type=payment
+```
+
+Payment receipts are rendered with `$payment`, `$company_address`, `$billing_address`, `$notes` and `$logo`. Reports get `$company`, `$from_date`, `$to_date`, `$currency` and their own dataset.
 
 ## Fonts
 
