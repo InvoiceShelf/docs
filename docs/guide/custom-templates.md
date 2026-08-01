@@ -93,6 +93,16 @@ They are drawn *inside* the page margin, so give the relevant margin room under 
 
 `pageNumber` and `totalPages` are substituted by the browser. If you only want page numbers, turn them on under **Settings → PDF Generation** instead of writing a footer.
 
+## Credit notes
+
+[Credit notes](/guide/credit-notes.md) render through the same invoice template as the document they reverse, so a custom invoice design needs one include near the top of its content area:
+
+```blade
+@include('app.pdf.partials.credit-note-banner')
+```
+
+That partial draws the credit-note banner and reference line on a credit note, and the cancelled banner on an invoice that has been reversed. It renders nothing on any other document, so it is safe to leave in place. Without it the PDF still renders correctly, with negative amounts and all, but neither banner appears.
+
 ## Overriding payment receipts and reports
 
 Payment receipts and the five reports have no picker: there is one design, and a custom file replaces it outright. Name the file after the document you are replacing:

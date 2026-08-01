@@ -89,6 +89,7 @@ export default defineConfig({
                     { text: 'Items', link: '/guide/items.md' },
                     { text: 'Estimates', link: '/guide/estimates.md' },
                     { text: 'Invoices', link: '/guide/invoices.md' },
+                    { text: 'Credit Notes', link: '/guide/credit-notes.md' },
                     { text: 'Recurring Invoices', link: '/guide/recurring-invoices.md' },
                     { text: 'Payments', link: '/guide/payments.md' },
                     { text: 'Expenses', link: '/guide/expenses.md' },
