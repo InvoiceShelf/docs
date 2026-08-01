@@ -101,7 +101,7 @@ They are drawn *inside* the page margin, so give the relevant margin room under 
 @include('app.pdf.partials.credit-note-banner')
 ```
 
-That partial draws the credit-note banner and reference line on a credit note, and the cancelled banner on an invoice that has been reversed. It renders nothing on any other document, so it is safe to leave in place. Without it the PDF still renders correctly, with negative amounts and all, but neither banner appears.
+That partial draws the credit-note banner, reference line and reason on a credit note, and the partially credited or cancelled banner on an invoice that has been reversed. It renders nothing on any other document, so it is safe to leave in place. Without it the PDF still renders correctly, with negative amounts and all, but neither banner appears.
 
 ## Overriding payment receipts and reports
 

@@ -25,7 +25,7 @@ All created invoices are shown on the Invoices page and you can easily edit or d
 
 You choose to send an invoice directly from the application or mark the invoice as sent.
 
-An invoice you have already sent should not be edited away. To reverse one, use **Create Credit Note** from its action menu, which issues a document cancelling it in full. See [credit notes](/guide/credit-notes.md).
+An invoice you have already sent should not be edited away. To reverse one, use **Create Credit Note** from its action menu, which issues a document cancelling it in full or in part. See [credit notes](/guide/credit-notes.md).
 
 ![Invoices Page](/images/invoices.png)
 
