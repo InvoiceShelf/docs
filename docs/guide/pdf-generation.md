@@ -58,20 +58,22 @@ Every setting can come from the environment or from **Settings → PDF Generatio
 | `PDF_PAPER_WIDTH` | `210mm` | Page width |
 | `PDF_PAPER_HEIGHT` | `297mm` | Page height |
 | `PDF_ORIENTATION` | `portrait` | `portrait` or `landscape` |
-| `PDF_MARGIN_TOP` | `1.2cm` | Top page margin |
-| `PDF_MARGIN_RIGHT` | `1.2cm` | Right page margin |
-| `PDF_MARGIN_BOTTOM` | `1.2cm` | Bottom page margin |
-| `PDF_MARGIN_LEFT` | `1.2cm` | Left page margin |
+| `PDF_MARGIN_TOP` | `0` | Top page margin |
+| `PDF_MARGIN_RIGHT` | `0` | Right page margin |
+| `PDF_MARGIN_BOTTOM` | `0` | Bottom page margin |
+| `PDF_MARGIN_LEFT` | `0` | Left page margin |
 | `PDF_PAGE_NUMBERS` | `false` | Repeat the page number on every page (Gotenberg only) |
 | `GOTENBERG_HOST` | `http://pdf:3000` | Where the Gotenberg service listens |
 | `GOTENBERG_PDFA` | *(unset)* | `PDF/A-1b`, `PDF/A-2b` or `PDF/A-3b` for archival output |
 | `GOTENBERG_ALLOWED_PRIVATE_HOST` | *(unset)* | Exempts one private host from the SSRF guard — see below |
 
-Sizes and margins are a number followed by `pt`, `px`, `pc`, `mm`, `cm` or `in`. The settings screen offers the usual paper sizes as presets, and a Custom option for anything else.
+Sizes are a number followed by `pt`, `px`, `pc`, `mm`, `cm` or `in`; margins may also be a bare `0`. The settings screen offers the usual paper sizes as presets, and a Custom option for anything else.
+
+Margins default to nothing because the bundled templates carry their own spacing, and two of them are built around a header band that runs to the paper edge — which it can only do when there is no page margin. Set a margin if you want one; the band will be inset by it.
 
 ### Page setup applies to both drivers
 
-Paper size, orientation and margins are honoured whichever driver renders the document, so switching between them does not change the layout. The `1.2cm` margin default is dompdf's own, which is why documents look the same after switching to Gotenberg.
+Paper size, orientation and margins are honoured whichever driver renders the document, so switching between them does not change the layout.
 
 ### Archival output
 
@@ -79,7 +81,7 @@ Set `GOTENBERG_PDFA`, or pick a format under **Settings → PDF Generation**, to
 
 ### Page numbers
 
-Turning page numbers on repeats `1 / 4` at the foot of every page. It needs a bottom margin to sit in, since the footer draws inside the page margin. A template supplying its own footer keeps it — see [custom templates](/guide/custom-templates.md). Gotenberg only.
+Turning page numbers on repeats `1 / 4` at the foot of every page. **It needs a bottom margin to sit in**, since the footer draws inside the page margin and margins default to nothing — set `PDF_MARGIN_BOTTOM`, or a bottom margin under Settings, or the numbers will not appear. A template supplying its own footer keeps it — see [custom templates](/guide/custom-templates.md). Gotenberg only.
 
 ## Private networks and the SSRF guard
 

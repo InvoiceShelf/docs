@@ -115,6 +115,10 @@ php artisan make:template payment --type=payment
 
 Payment receipts are rendered with `$payment`, `$company_address`, `$billing_address`, `$notes` and `$logo`. Reports get `$company`, `$from_date`, `$to_date`, `$currency` and their own dataset.
 
+## Spacing and the page edge
+
+The page margin defaults to nothing, so a template owns its own insets — the bundled ones use 30px. That is what lets a full-width header run to the paper edge: put it at the top of `<body>` with no margin on `body`, and it bleeds. Set a page margin under **Settings → PDF Generation** and everything, including that header, is inset by it.
+
 ## Fonts
 
 Templates get their `@font-face` rules from the packages installed under **Settings → Font Packages**, via a shared partial:
