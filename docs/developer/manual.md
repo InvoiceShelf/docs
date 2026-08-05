@@ -5,7 +5,9 @@ lang: en-US
 
 # Setting Up with NGINX/PHP-FPM
 
-Setting up InvoiceShelf with NGINX and PHP-FPM is ideal for Linux systems. Follow the Laravel deployment guide for NGINX to set up your environment.
+Setting up InvoiceShelf with NGINX and PHP-FPM is ideal for Linux systems. Follow the
+[Laravel 13 NGINX deployment guide](https://laravel.com/docs/13.x/deployment#nginx) for the
+web-server configuration.
 
 ## Step 1 : Install Dependencies
 
@@ -23,13 +25,14 @@ sudo apt install nginx
 # Install required tools
 sudo apt install git curl zip unzip sqlite3
 
-# Install PHP/PHP-FPM
-sudo apt install php8.3-fpm php8.3-gd php8.3-exif php8.3-mbstring php8.3-zip php8.3-curl php8.3-bcmath
+# Install PHP 8.4/PHP-FPM and the extensions InvoiceShelf uses
+sudo apt install php8.4-fpm php8.4-gd php8.4-exif php8.4-mbstring php8.4-zip php8.4-curl php8.4-bcmath php8.4-xml php8.4-intl
 
-# Install NPM
+# Install Node.js 24 and enable pnpm through Corepack
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
-nvm install 20
-nvm use 20
+nvm install 24
+nvm use 24
+corepack enable
 ```
 
 ## Step 2 : Clone the Repository
@@ -37,7 +40,7 @@ nvm use 20
 If you forked the project, you can use the fork url instead.
 
 ```bash
-git clone https://github.com/InvoiceShelf/InvoiceShelf.git 
+git clone --branch 3.x https://github.com/InvoiceShelf/InvoiceShelf.git
 cd InvoiceShelf
 ```
 
@@ -58,11 +61,11 @@ cp .env.example .env
 
 ```bash
 composer install
-npm install
-# If you want one-time build run:
-npm run prod
+pnpm install
+# For a one-time production build:
+pnpm build
 # If you want dev builds run:
-npm run dev
+pnpm dev
 ```
 
 ## Step 5 : Generate Application Key
@@ -79,7 +82,9 @@ php artisan migrate
 
 ## Step 7 : Configure NGINX
 
-Follow the Laravel guide to create NGINX server block configuration at [Laravel NGINX Deployment Guide](https://laravel.com/docs/11.x/deployment#nginx)
+Follow the [Laravel 13 NGINX deployment guide](https://laravel.com/docs/13.x/deployment#nginx)
+to create the NGINX server block configuration. Point the document root at the project's
+`public` directory.
 
 Finally, you need to restart NGINX.
 

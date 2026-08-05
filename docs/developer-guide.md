@@ -6,12 +6,15 @@ lang: en-US
 # Developer Guide
 
 This guide will help you set up your development environment and get started with InvoiceShelf.
-There are three primary ways to install and set up InvoiceShelf for development: Docker, NGINX/PHP-FPM, and Laravel Herd.
+There are three primary ways to set up InvoiceShelf for development: Docker,
+NGINX/PHP-FPM, and Laravel Herd. The application currently uses Laravel 13, PHP 8.4,
+Node.js 24, and pnpm.
 
 
 ## Docker Environment
 
-If you want to use the pre-configured Docker dev environment
+Use the application's `./devenv` wrapper to choose and start the pre-configured Docker
+development environment.
 
 [[Read more]](./developer/docker.md)
 
@@ -24,7 +27,7 @@ If you want to use Laravel Herd on your Windows/Mac machine
 
 ## Manual Nginx/php-fpm
 
-If you want to install InvoiceShelf on plain Linux Debian/Ubuntu
+Use this when you want to run the application directly on a Linux host.
 
 [[Read more]](./developer/manual.md)
 

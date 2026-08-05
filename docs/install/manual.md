@@ -5,23 +5,29 @@ lang: en-US
 
 # Manual Installation
 
-Since InvoiceShelf is based on Laravel, the manual installation is very similar to Laravel. If you get stuck somewhere, you can also consult the official [Laravel guide](https://laravel.com/docs/11.x/deployment#nginx).
+Since InvoiceShelf is based on Laravel 13, the manual installation is similar to a Laravel
+deployment. If you get stuck, consult the official [Laravel 13 deployment guide](https://laravel.com/docs/13.x/deployment#nginx).
 
 ## Requirements
 
 ```
-PHP >= 8.2.0
+PHP >= 8.4
 BCMath PHP Extension
 Ctype PHP Extension
 cURL PHP Extension
 DOM PHP Extension
+Exif PHP Extension
+Fileinfo PHP Extension
 Filter PHP Extension
+GD PHP Extension
 Iconv PHP Extension
+Intl PHP Extension
 JSON PHP Extension
 Mbstring PHP Extension
 OpenSSL PHP Extension
 PDO PHP Extension
 Session PHP Extension
+SQLite3 PHP Extension
 Tokenizer PHP Extension
 XML PHP Extension
 ZIP PHP Extension
@@ -29,9 +35,10 @@ ZIP PHP Extension
 
 ## Step 1 : Download
 
-[Download](http://invoiceshelf.com/) the latest InvoiceShelf package.
+[Download](https://invoiceshelf.com/download) the latest InvoiceShelf package.
 
-Alternatively, If you are a developer, follow the instructions to setup development environment on [this Link](../developer-guide.md)
+If you are a developer, follow the [development environment guide](../developer-guide.md)
+instead.
 
 ## Step 2 : Upload to Server
 
@@ -49,7 +56,7 @@ Please note that, InvoiceShelf must be installed on a primary domain or subdomai
 - `invoiceshelf.example.com` (Valid)
 - `invoiceshelf.test` (Valid)
 
-## Step 3: Fix File Permissions
+## Step 4: Fix File Permissions
 
 It is important to set the correct permissions for the storage and bootstrap/cache directories to ensure the application can write to these locations. Here are the steps:
 
@@ -67,7 +74,7 @@ chown -R www-data:www-data storage
 chown -R www-data:www-data bootstrap/cache
 ```
 
-## Step 4 : Copy Environment File
+## Step 5 : Copy Environment File
 
 1. Locate the Example File: In the root directory of your project, find the file named `.env.example`.
 2. Copy the `.env.example` file and create a new file named `.env` in the same root directory.
@@ -75,19 +82,16 @@ chown -R www-data:www-data bootstrap/cache
 ```sh
 cp .env.example .env
 ```
-3. Make sure you set APP_KEY. You can generate one using:
+3. Generate a unique `APP_KEY` on the server:
 
 ```sh
 php artisan key:generate
 ```
 
-or generate it manually on the [following link](https://generate-random.org/laravel-key-generator).
-
-
 By following these steps, you will create a new `.env` file that can be customized with your environment-specific settings.
 
 > For example, you can change the default SQLite database to MySQL or PostgreSQL.
 
-## Step 5 : Complete installation wizard
+## Step 6 : Complete installation wizard
 
 Open the link to the domain in the browser (Example: `https://demo.invoiceshelf.com`) and complete the installation wizard as directed.
