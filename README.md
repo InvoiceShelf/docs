@@ -38,8 +38,9 @@ docker build -t invoiceshelf/docs .
 
 ## Deployment
 
-Documentation is automatically built and published to GitHub Container Registry on every push to master.
+Every push builds and publishes a commit-SHA image. Pushes to `master` also publish the
+`latest` image.
 
 Images are available at:
-- `ghcr.io/invoiceshelf/docs:latest` - Latest master branch
-- `ghcr.io/invoiceshelf/docs:<commit-sha>` - Specific commit builds
+- `ghcr.io/invoiceshelf/docs:latest` - Latest `master` build
+- `ghcr.io/invoiceshelf/docs:<commit-sha>` - A specific commit build
