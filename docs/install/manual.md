@@ -27,6 +27,7 @@ Mbstring PHP Extension
 OpenSSL PHP Extension
 PDO PHP Extension
 Session PHP Extension
+SQLite3 PHP Extension
 Tokenizer PHP Extension
 XML PHP Extension
 ZIP PHP Extension
@@ -36,7 +37,8 @@ ZIP PHP Extension
 
 [Download](https://invoiceshelf.com/download) the latest InvoiceShelf package.
 
-Alternatively, If you are a developer, follow the instructions to setup development environment on [this Link](../developer-guide.md)
+If you are a developer, follow the [development environment guide](../developer-guide.md)
+instead.
 
 ## Step 2 : Upload to Server
 
@@ -80,14 +82,11 @@ chown -R www-data:www-data bootstrap/cache
 ```sh
 cp .env.example .env
 ```
-3. Make sure you set APP_KEY. You can generate one using:
+3. Generate a unique `APP_KEY` on the server:
 
 ```sh
 php artisan key:generate
 ```
-
-or generate it manually on the [following link](https://generate-random.org/laravel-key-generator).
-
 
 By following these steps, you will create a new `.env` file that can be customized with your environment-specific settings.
 
