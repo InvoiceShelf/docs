@@ -1,3 +1,4 @@
-# Mobile Apps
+# Mobile apps
 
-The mobile APP is currently in development. The section will be updated as soon as we have initial version of it.
+InvoiceShelf is currently available as a web application. Native mobile apps are not
+available yet; this page will be updated when there is a supported mobile release.

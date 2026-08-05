@@ -5,15 +5,15 @@ lang: en-US
 
 # Translation Guide
 
-InvoiceShelf uses Crodwin.com to handle the translations.
+InvoiceShelf uses [Crowdin](https://crowdin.com/) to manage translations.
 
 We welcome anyone that want to translate InvoiceShelf to their native language.
 
-## Step 1 : Go to crowdin
+## Step 1 : Go to Crowdin
 
-Navigate to the project page on Crodwin.com.
+Navigate to the InvoiceShelf project on Crowdin.
 
-[[Navigate to Crodwin]](https://crowdin.com/project/invoiceshelf)
+[[Open Crowdin]](https://crowdin.com/project/invoiceshelf)
 
 ## Step 2 : Open in Editor
 

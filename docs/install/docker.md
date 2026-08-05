@@ -5,11 +5,15 @@ lang: en-US
 
 # Docker Installation
 
-We have pre-configured [Docker image](https://hub.docker.com/r/invoiceshelf/invoiceshelf) that can be run on your computer or cloud server.
+InvoiceShelf publishes production images at
+[Docker Hub](https://hub.docker.com/r/invoiceshelf/invoiceshelf). The supported Compose
+examples live in [InvoiceShelf/docker](https://github.com/InvoiceShelf/docker), which is
+separate from the application's development Docker environment.
 
-Follow the steps bellow to get started.
+Follow the steps below to get started.
 
-If you notice any issues report it to [InvoiceShelf/docker](https://github.com/invoiceshelf/docker).
+If you notice an issue with these production images or examples, report it to
+[InvoiceShelf/docker](https://github.com/InvoiceShelf/docker).
 
 ## Step 1 : Install Docker
 
@@ -20,34 +24,53 @@ Install Docker on your host: [https://docs.docker.com/install/](https://docs.doc
 Open terminal and clone the repository by running:
 
 ```
-git clone https://github.com/InvoiceShelf/docker
+git clone https://github.com/InvoiceShelf/docker.git
+cd docker
 ```
 
 ## Step 3 : Prepare docker-compose
 
-Navigate to the cloned repository folder (`docker`) and copy one of the example files (docker-compose.{db}.yml) to docker-compose.yml
+Choose a database variant and copy it to `docker-compose.yml`:
 
-If you want to use MySQL, take `docker-compose.mysql.yml` and copy it to `docker-compose.yml` in the same folder.
+```bash
+# SQLite (smallest setup; no separate database service)
+cp docker-compose.sqlite.yml docker-compose.yml
 
-This will make it possible to run `docker compose up/down` commands without specifying `-f path/to/docker-compose.yml` in the `docker` folder.
+# or MariaDB
+cp docker-compose.mysql.yml docker-compose.yml
+
+# or PostgreSQL
+cp docker-compose.pgsql.yml docker-compose.yml
+```
+
+The repository's default `docker-compose.yml` points to the SQLite variant, but copying
+the selected file makes the configuration explicit and lets you use normal `docker compose`
+commands without `-f`.
+
+The supplied files use the stable `:latest` image. For the 3.x alpha preview,
+change the application image to `invoiceshelf/invoiceshelf:next` before starting
+the stack. The `:next` tag is not suitable for production.
 
 
-### 3.1 Reverse Proxy Requirements
-For spinning up the Docker Compose stack using reverse proxies and your own domain, the following environment variables are **required**: <br/>
+### 3.1 Configure your public address
+
+Before starting the stack, edit `docker-compose.yml`. Set these values to the address that
+your browser uses to reach InvoiceShelf. Include a non-standard port in `APP_URL` and
+`SANCTUM_STATEFUL_DOMAINS`; `SESSION_DOMAIN` is the hostname only.
 
  ####  APP_URL
- The full public URL (including protocol and port) where your application is accessed. Used for generating absolute URLs and redirects <br/>
+ The full public URL (including protocol and port) where your application is accessed. It is used for absolute URLs and redirects.
 - **Format**: `https://<subdomain-if-any>.<domain>.<tld>`
 - **Examples**: 
     - `APP_URL=http://192.168.1.200`
     - `APP_URL=http://192.168.1.200:8080`
-    - `APP_URL=http://199.199.1.199` # not recommended, run behind reverse proxy with SSL
-    - `APP_URL=http://invoiceshelf.acme.com` # not recommended, try adding SSL
+    - `APP_URL=http://199.199.1.199`
+    - `APP_URL=http://invoiceshelf.acme.com`
     - `APP_URL=https://invoiceshelf.acme.com`
     - `APP_URL=https://invoiceshelf.acme.com:8080`
 
 #### SESSION_DOMAIN  
- The domain used for session cookies. Include port if using non-standard ports <br/>
+ The domain used for session cookies. Do not include a protocol or port.
 - **With leading dot (.)**: Allows cookies across all subdomains (e.g., `.acme.com`)
 - **Without dot**: Restricts cookies to specific domain only (e.g., `invoiceshelf.acme.com`)
 - **Format**: `.<yourdomain>.<tld>` (note the leading dot for subdomain support)
@@ -56,41 +79,55 @@ For spinning up the Docker Compose stack using reverse proxies and your own doma
   - `SESSION_DOMAIN=invoiceshelf.acme.com` (without dot for specific domain)
 
 #### SANCTUM_STATEFUL_DOMAINS
-This is comma-separated list of domains allowed to manage stateful sessions. Typically includes your frontend domain(s) and ports <br/>
+This is a comma-separated list of domains allowed to manage stateful sessions. It normally
+contains the same public host as `APP_URL`, including its port when one is used.
 - **Format**: Comma-separated list of domains
 - **Examples**:
   - `SANCTUM_STATEFUL_DOMAINS=invoiceshelf.acme.com`
   - `SANCTUM_STATEFUL_DOMAINS=invoiceshelf.acme.com,invoiceshelf.acme.com:8080`
   - `SANCTUM_STATEFUL_DOMAINS=localhost,localhost:3000,invoiceshelf.acme.com`
 
-**Important**: Restart the container each time after modifying these variables in `docker-compose.yaml`.
+For example, a reverse-proxied installation at `https://invoices.example.com` uses:
+
+```yaml
+- APP_URL=https://invoices.example.com
+- SESSION_DOMAIN=invoices.example.com
+- SANCTUM_STATEFUL_DOMAINS=invoices.example.com
+```
+
+Restart the stack after changing these variables.
 
 
 ## Step 4 : Finalize & Run docker-compose
 
-Edit `docker-compose.yml` and adjust the configuration as per your needs.
+Edit `docker-compose.yml` and replace the example database credentials before exposing the
+stack publicly. You may also pin the image tag instead of relying on `latest`.
 
 And finally, open Terminal in the `docker` folder and spin up InvoiceShelf app:
 
 ```
-$ docker compose up -d
+docker compose up -d
 ```
 
 ## Step 5 : Complete installation wizard
 
-Open your web browser and go to your given domain and follow the installation wizard.
+Open the public address configured in `APP_URL` (for the supplied examples,
+`http://localhost:8090`) and complete the installation wizard.
 
-##### 5.1. MySQL/PostgresSQL
+##### 5.1. MariaDB/PostgreSQL
 
-For MySQL or PostgreSQL, you can use the following Database setup:
+For the MariaDB or PostgreSQL Compose variants, use the values you set in
+`docker-compose.yml`. The database host is the Compose service name, `database`:
 
-- Database Host: `invoiceshelf`
+- Database Host: `database`
 - Database Name: `invoiceshelf`
 - Database Username: `invoiceshelf`
 - Database Password: `somepass`
 
-**Important**: The database password `somepass` is example and should be changed in the docker-compose.yml file before you run the project, especially if you expose it in public.
+`somepass` is only an example. Change it, the database name, and username in both relevant
+services in `docker-compose.yml` before making the installation public.
 
 ##### 5.2. SQLite Database
 
-Leave the `database.sqlite` path as is, otherwise it will NOT work correctly.
+Select SQLite and leave the database path unchanged:
+`/var/www/html/storage/app/database.sqlite`.
