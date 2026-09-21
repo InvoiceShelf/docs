@@ -87,12 +87,34 @@ contains the same public host as `APP_URL`, including its port when one is used.
   - `SANCTUM_STATEFUL_DOMAINS=invoiceshelf.acme.com,invoiceshelf.acme.com:8080`
   - `SANCTUM_STATEFUL_DOMAINS=localhost,localhost:3000,invoiceshelf.acme.com`
 
+#### TRUSTED_PROXIES
+Which upstream proxies may rewrite the client address, host, port and scheme. The default
+`*` trusts every hop, which is what you want for a container behind a reverse proxy you
+control.
+
+If you narrow it, list the address **the container actually sees**, which is normally the
+Docker bridge gateway (`172.x.x.x`) and not your proxy's LAN address. Getting this wrong
+makes InvoiceShelf discard the proxy's `X-Forwarded-Proto` header and fall back to
+generating `http://` links behind an https site, which shows up as a failed sign-in that
+works after a page refresh.
+- **Examples**:
+  - `TRUSTED_PROXIES=*` (default)
+  - `TRUSTED_PROXIES=172.18.0.1`
+
+#### FORCE_HTTPS
+Generate absolute URLs as https no matter what the incoming request says. You normally do
+not need to set this: an `APP_URL` that begins with `https://` already implies it.
+
+Set `FORCE_HTTPS=true` when TLS terminates somewhere the forwarded headers do not survive,
+or `FORCE_HTTPS=false` to keep http even with an https `APP_URL`.
+
 For example, a reverse-proxied installation at `https://invoices.example.com` uses:
 
 ```yaml
 - APP_URL=https://invoices.example.com
 - SESSION_DOMAIN=invoices.example.com
 - SANCTUM_STATEFUL_DOMAINS=invoices.example.com
+- TRUSTED_PROXIES=*
 ```
 
 Restart the stack after changing these variables.
