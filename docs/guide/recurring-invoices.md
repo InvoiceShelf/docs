@@ -46,7 +46,16 @@ In order for InvoiceShelf to automatically create Invoices on a given schedule, 
 
 #### For Docker:
 
-InvoiceShelf includes support for cron with docker on version 5.0.0 by default. If you're updating from a previous version, please take a backup of your database + files and re-run `docker-compose up`.
+The InvoiceShelf image runs the scheduler itself, as a supervised service
+alongside the web server, so a container install needs no cron of its own.
+
+If your recurring invoices have never been created, update to a current image:
+earlier images shipped no scheduler at all, and nothing on this page ran.
+
+Set `SCHEDULER_ENABLED=false` only if you drive the schedule from somewhere
+else, such as a second container running
+`php artisan schedule:work` or more than one replica of the web container.
+Leave it unset otherwise.
 
 #### Other Providers:
 
@@ -61,6 +70,26 @@ Example command for a shared hosting provider like Godaddy:
 ```
  /usr/local/bin/php /home/myuser/public_html/InvoiceShelf/artisan schedule:run >> /dev/null 2>&1
 ```
+
+#### Hosts With No Cron At All:
+
+Some shared hosts allow neither a crontab entry nor a long-running process. For
+those, InvoiceShelf can be driven over HTTP: set a secret in your `.env`
+
+```
+CRON_JOB_AUTH_TOKEN=a-long-random-string
+```
+
+and have any external scheduler call the endpoint below once a minute, sending
+the secret in the `x-authorization-token` header.
+
+```
+curl -H "x-authorization-token: a-long-random-string" https://your-invoiceshelf/api/cron
+```
+
+The endpoint refuses every caller while the token is unset, so it is inert
+unless you deliberately turn it on. Calling it more often than once a minute is
+harmless: extra calls answer `{"success": true, "ran": false}` and do nothing.
 
 #### Testing Locally:
 

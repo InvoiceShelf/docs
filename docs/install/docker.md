@@ -131,3 +131,17 @@ services in `docker-compose.yml` before making the installation public.
 
 Select SQLite and leave the database path unchanged:
 `/var/www/html/storage/app/database.sqlite`.
+
+## Scheduled work
+
+The container runs Laravel's scheduler itself, supervised alongside the web
+server. That is what creates recurring invoices, flags invoices overdue and
+expires estimates, so there is no crontab to add on the host.
+
+Set `SCHEDULER_ENABLED=false` only if you drive the schedule from elsewhere,
+for example a second container started with
+`command: ["php", "/var/www/html/artisan", "schedule:work"]`, or if you run more
+than one replica of the web container and want exactly one of them scheduling.
+
+See [Recurring Invoices](../guide/recurring-invoices.md#server-configuration)
+for the options open to hosts that can run neither.
