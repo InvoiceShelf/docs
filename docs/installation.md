@@ -25,3 +25,8 @@ Use this option when you manage PHP, the web server, and the database yourself.
 
 [[Learn More]](./install/manual.md)
 
+## Easypanel
+
+[Easypanel](https://easypanel.io) is a self-hosted Docker deployment platform, and InvoiceShelf has a one-click deployment template there: https://easypanel.io/templates/invoiceshelf. The template sets up InvoiceShelf with a MariaDB database automatically.
+
+
