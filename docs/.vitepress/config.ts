@@ -96,6 +96,7 @@ export default defineConfig({
                     { text: 'Custom Fields', link: '/guide/custom-fields.md' },
                     { text: 'Custom Templates', link: '/guide/custom-templates.md' },
                     { text: 'PDF Generation', link: '/guide/pdf-generation.md' },
+                    { text: 'Email', link: '/guide/mail.md' },
                     { text: 'AI Assistants (MCP)', link: '/guide/ai-assistants.md' },
                     { text: 'File Disk', link: '/guide/file-disk.md' },
                     { text: 'Backups', link: '/guide/backups.md' },
