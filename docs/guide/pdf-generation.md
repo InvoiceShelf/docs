@@ -81,7 +81,7 @@ Only the exact value you set here is exempt. Pointing the Gotenberg host at any 
 This is also why the setting is environment-only and absent from the admin UI: the person who decides a private host is trustworthy should be the person who controls the network, not anyone who can reach a settings page.
 :::
 
-The value must match what you enter as the Gotenberg host, though comparison ignores capitalisation and a trailing slash. If the two differ in any other way — a different port, `https` instead of `http`, a path — the exemption does not apply.
+The value must match what you enter as the Gotenberg host, though comparison ignores capitalisation and a trailing slash. If the two differ in any other way — a different port, `https` instead of `http`, a path — the exemption does not apply. The other features with a private-network exemption are listed on the [Private Networks](./private-networks.md) page.
 
 ## Troubleshooting
 
