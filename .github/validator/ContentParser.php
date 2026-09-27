@@ -20,9 +20,9 @@ class ContentParser
     {
         $root = realpath($root) ?: throw new RuntimeException('Docs directory does not exist.');
         $manifest = json_decode($this->read($root, 'docs.json'), true, flags: JSON_THROW_ON_ERROR);
-        if (($manifest['schema'] ?? null) !== 1 || ! is_array($manifest['navigation'] ?? null)) {
-            throw new RuntimeException('Unsupported docs manifest.');
-        }
+        $schema = $manifest['schema'] ?? null;
+        $catalog = $this->catalog($manifest);
+        $versioned = $schema === 2;
         $files = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($root.'/docs', \FilesystemIterator::SKIP_DOTS));
         $documents = $assets = $links = [];
         foreach ($files as $file) {
@@ -34,6 +34,15 @@ class ContentParser
             }
             $path = substr($file->getPathname(), strlen($root) + 1);
             $slug = substr($path, 5, -3);
+            $version = null;
+            if ($versioned) {
+                if (! preg_match('~^v([1-9][0-9]*)/(.+)$~', $slug, $match) || ! isset($catalog['versions'][$match[1]])) {
+                    throw new RuntimeException("Document is outside a declared version: {$path}");
+                }
+                $version = $match[1];
+                $slug = $match[2];
+            }
+            $documentKey = $this->key($slug, $version);
             if (! preg_match('~^[a-z0-9][a-z0-9/-]*$~D', $slug) || str_contains($slug, '//') || in_array(explode('/', $slug)[0], ['search', 'ask', 'assets'], true)) {
                 throw new RuntimeException("Invalid document path: {$path}");
             }
@@ -44,6 +53,9 @@ class ContentParser
             }
             $versions = array_values(array_map('strval', $versions));
             sort($versions);
+            if ($versioned && ($versions !== [$version] || ($meta['reviewed_against'] ?? '') !== $catalog['versions'][$version]['source_commit'])) {
+                throw new RuntimeException("Document version/review baseline mismatch: {$path}");
+            }
             $hash = $this->reviewHash($body, $versions, (string) ($meta['title'] ?? ''));
             $environment = new Environment(['html_input' => 'escape', 'allow_unsafe_links' => false, 'max_nesting_level' => 50]);
             $environment->addExtension(new CommonMarkCoreExtension);
@@ -69,6 +81,11 @@ class ContentParser
                     $url = $node->getUrl();
                     if (preg_match('~^https://docs\.invoiceshelf\.com(/.*)?$~', $url, $match)) {
                         $url = $match[1] ?? '/';
+                        if ($versioned && ! str_starts_with($url, '/images/')) {
+                            $legacy = preg_replace('~\.(?:html|md)(?=#|$)~', '', ltrim($url, '/'));
+                            [$legacySlug, $legacyAnchor] = array_pad(explode('#', $legacy, 2), 2, '');
+                            $url = '/docs/'.($catalog['redirects'][$legacySlug ?: 'index'] ?? 'v'.$catalog['default'].'/'.($legacySlug ?: 'index')).($legacyAnchor ? '#'.$legacyAnchor : '');
+                        }
                     }
                     if (preg_match('~^(?:https?://|mailto:)~i', $url)) {
                         if ($node instanceof Image) {
@@ -82,15 +99,31 @@ class ContentParser
                     }
                     [$target, $fragment] = array_pad(explode('#', $url, 2), 2, '');
                     $target = explode('?', $target, 2)[0];
-                    $resolved = $target === '' ? $slug.'.md' : $this->resolve($slug, rawurldecode($target));
+                    $targetVersion = $version;
+                    if ($versioned && preg_match('~^/docs/v([1-9][0-9]*)(?:/(.*))?$~', $target, $match)) {
+                        $targetVersion = $match[1];
+                        $resolved = ($match[2] ?? '') ?: 'index';
+                    } else {
+                        $resolved = $target === '' ? $slug.'.md' : $this->resolve($slug, rawurldecode($target));
+                    }
                     if ($node instanceof Image) {
+                        if ($versioned && ! str_starts_with($resolved, 'images/v'.$version.'/')) {
+                            throw new RuntimeException("Screenshot belongs outside v{$version}: {$resolved}");
+                        }
                         $source = str_starts_with($resolved, 'images/') ? 'docs/public/'.$resolved : 'docs/'.$resolved;
                         $assets[$resolved] ??= $this->asset($root, $source, $resolved);
+                        if ($versioned) {
+                            $capture = json_decode($this->read($root, $source.'.capture.json'), true, flags: JSON_THROW_ON_ERROR);
+                            $book = $catalog['versions'][$version];
+                            if (($capture['app'] ?? '') !== 'v'.$version || ($capture['source_revision'] ?? '') !== $book['source_commit'] || ($capture['source_version'] ?? '') !== $book['release'] || ($capture['source_dirty'] ?? true)) {
+                                throw new RuntimeException("Screenshot version or release does not match {$path}: {$source}");
+                            }
+                        }
                         $node->setUrl('/docs/assets/'.$assets[$resolved]['hash']);
                     } else {
                         $targetSlug = preg_replace('~\.(?:md|html)$~', '', rtrim($resolved, '/')) ?: 'index';
-                        $links[] = [$slug, $targetSlug, rawurldecode($fragment)];
-                        $node->setUrl($this->url($targetSlug).($fragment !== '' ? '#'.$fragment : ''));
+                        $links[] = [$documentKey, $this->key($targetSlug, $targetVersion), rawurldecode($fragment)];
+                        $node->setUrl($this->url($targetSlug, $targetVersion).($fragment !== '' ? '#'.$fragment : ''));
                     }
                 }
             }
@@ -100,6 +133,13 @@ class ContentParser
             }
             $renderer = new HtmlRenderer($environment);
             $html = (string) $renderer->renderDocument($ast);
+            foreach (($meta['anchor_aliases'] ?? []) as $alias => $targetId) {
+                if (! preg_match('/^[a-z0-9_-]+$/D', $alias) || ! in_array($targetId, array_column($headings, 'id'), true) || in_array($alias, array_column($headings, 'id'), true)) {
+                    throw new RuntimeException("Invalid heading alias: {$path}");
+                }
+                $html = preg_replace('~(<h[1-6] id="'.preg_quote($targetId, '~').'")~', '<span id="'.$alias.'" class="docs-anchor" aria-hidden="true"></span>$1', $html, 1);
+                $headings[] = ['id' => $alias, 'text' => '', 'level' => 0];
+            }
             $plain = $this->plain($html);
             $chunks = [];
             $heading = $title;
@@ -125,11 +165,15 @@ class ContentParser
                     }
                 }
             }
-            $documents[$slug] = [
-                'slug' => $slug, 'source_path' => $path, 'title' => $title,
+            $reviewed = $versions !== [] && hash_equals($hash, (string) ($meta['reviewed_hash'] ?? $meta['rag_reviewed_hash'] ?? ''));
+            if ($versioned && ! $reviewed) {
+                throw new RuntimeException("Review the current text before publishing: {$path}");
+            }
+            $documents[$documentKey] = [
+                'version' => $version, 'slug' => $slug, 'source_path' => $path, 'title' => $title,
                 'description' => (string) ($meta['description'] ?? mb_substr(preg_replace('/\s+/u', ' ', $plain), 0, 180)),
                 'language' => 'en', 'versions' => $versions,
-                'reviewed' => $versions !== [] && hash_equals($hash, (string) ($meta['rag_reviewed_hash'] ?? '')),
+                'reviewed' => $reviewed,
                 'content_hash' => $hash, 'markdown' => $body, 'html' => $html, 'plain_text' => $plain,
                 'headings' => $headings, 'chunks' => $chunks,
             ];
@@ -146,7 +190,8 @@ class ContentParser
                 $assets[$resolved] ??= $this->asset($root, $source, $resolved);
             }
         }
-        if (! isset($documents['index']) || count($documents) > 2000) {
+        $indexes = $versioned ? array_map(fn ($v) => $this->key('index', (string) $v), array_keys($catalog['versions'])) : ['index'];
+        if (array_diff($indexes, array_keys($documents)) || count($documents) > 2000) {
             throw new RuntimeException('Docs must contain an index and at most 2000 documents.');
         }
         foreach ($links as [$from, $to, $fragment]) {
@@ -154,19 +199,29 @@ class ContentParser
                 throw new RuntimeException("Broken link: {$from} -> {$to}#{$fragment}");
             }
         }
-        foreach ($manifest['navigation'] as $group) {
-            if (! is_string($group['title'] ?? null) || ! is_array($group['items'] ?? null)) {
-                throw new RuntimeException('Invalid navigation group.');
+        $navigations = $versioned ? array_map(fn ($book) => $book['navigation'], $catalog['versions']) : ['' => $manifest['navigation']];
+        foreach ($navigations as $version => $groups) {
+            foreach ($groups as $group) {
+                if (! is_string($group['title'] ?? null) || ! is_array($group['items'] ?? null)) {
+                    throw new RuntimeException('Invalid navigation group.');
+                }
+                foreach ($group['items'] as $item) {
+                    if (! is_string($item['title'] ?? null) || ! isset($documents[$this->key($item['slug'] ?? '', $versioned ? (string) $version : null)])) {
+                        throw new RuntimeException('Navigation points to a missing page.');
+                    }
+                }
             }
-            foreach ($group['items'] as $item) {
-                if (! is_string($item['title'] ?? null) || ! isset($documents[$item['slug'] ?? ''])) {
-                    throw new RuntimeException('Navigation points to a missing page.');
+        }
+        if ($versioned) {
+            foreach ($catalog['redirects'] as $from => $to) {
+                if (! preg_match('~^[a-z0-9][a-z0-9/-]*$~D', $from) || ! preg_match('~^v([1-9][0-9]*)/(.+)$~D', $to, $match) || ! isset($documents[$this->key($match[2], $match[1])])) {
+                    throw new RuntimeException('Invalid legacy documentation redirect.');
                 }
             }
         }
         ksort($documents);
 
-        return ['documents' => $documents, 'assets' => $assets, 'navigation' => $manifest['navigation']];
+        return ['schema' => $schema, 'catalog' => $catalog, 'documents' => $documents, 'assets' => $assets, 'navigation' => $manifest['navigation'] ?? []];
     }
 
     public function frontMatter(string $markdown): array
@@ -195,9 +250,31 @@ class ContentParser
         return hash('sha256', json_encode(array_values($versions)).($title !== '' ? "\ntitle:".$title : '')."\n".trim(str_replace("\r\n", "\n", $body))."\n");
     }
 
-    public function url(string $slug): string
+    public function url(string $slug, ?string $version = null): string
     {
-        return '/docs'.($slug === 'index' ? '' : '/'.$slug);
+        return '/docs'.($version ? '/v'.$version : '').($slug === 'index' ? '' : '/'.$slug);
+    }
+
+    private function key(string $slug, ?string $version): string
+    {
+        return ($version ? $version.':' : '').$slug;
+    }
+
+    private function catalog(array $manifest): ?array
+    {
+        if (($manifest['schema'] ?? null) === 1 && is_array($manifest['navigation'] ?? null)) {
+            return null;
+        }
+        if (($manifest['schema'] ?? null) !== 2 || ! is_array($manifest['versions'] ?? null) || ! isset($manifest['versions'][$manifest['default'] ?? ''], $manifest['versions'][$manifest['latest'] ?? ''])) {
+            throw new RuntimeException('Unsupported docs manifest or missing default/latest collection.');
+        }
+        foreach ($manifest['versions'] as $id => $book) {
+            if (! preg_match('/^[1-9][0-9]*$/D', (string) $id) || ! is_string($book['label'] ?? null) || ! is_array($book['navigation'] ?? null) || ! str_starts_with($book['release'] ?? '', $id.'.') || ! preg_match('/^[a-f0-9]{40}$/D', $book['source_commit'] ?? '')) {
+                throw new RuntimeException('Invalid documentation version catalog.');
+            }
+        }
+
+        return ['default' => (string) $manifest['default'], 'latest' => (string) $manifest['latest'], 'versions' => $manifest['versions'], 'redirects' => $manifest['redirects'] ?? []];
     }
 
     private function asset(string $root, string $source, string $resolved): array

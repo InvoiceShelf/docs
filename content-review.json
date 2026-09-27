@@ -1,0 +1,1576 @@
+{
+  "review_date": "2026-09-27",
+  "method": "Pinned release source review, isolated real application fixtures, settled browser snapshots and visual screenshot inspection. Images are real captures, WebP encoding only.",
+  "versions": {
+    "2": {
+      "index": {
+        "title": "InvoiceShelf 2 documentation",
+        "release": "2.4.6",
+        "source_commit": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+        "review_sources": [
+          "README.md",
+          "version.md"
+        ],
+        "screenshots": [],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "introduction",
+          "features"
+        ]
+      },
+      "guide/dashboard": {
+        "title": "Dashboard",
+        "release": "2.4.6",
+        "source_commit": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v2/dashboard.webp",
+            "provenance": "/images/v2/dashboard.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": []
+      },
+      "guide/customers": {
+        "title": "Customers",
+        "release": "2.4.6",
+        "source_commit": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v2/customer-create.webp",
+            "provenance": "/images/v2/customer-create.webp.capture.json",
+            "visually_reviewed": true
+          },
+          {
+            "image": "/images/v2/customers.webp",
+            "provenance": "/images/v2/customers.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "add-new-customer",
+          "customer-fields",
+          "list-customers"
+        ]
+      },
+      "guide/items": {
+        "title": "Items",
+        "release": "2.4.6",
+        "source_commit": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v2/item-create.webp",
+            "provenance": "/images/v2/item-create.webp.capture.json",
+            "visually_reviewed": true
+          },
+          {
+            "image": "/images/v2/items.webp",
+            "provenance": "/images/v2/items.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "add-new-item",
+          "item-fields",
+          "items-page",
+          "list-items"
+        ]
+      },
+      "guide/invoices": {
+        "title": "Invoices",
+        "release": "2.4.6",
+        "source_commit": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v2/invoice-create.webp",
+            "provenance": "/images/v2/invoice-create.webp.capture.json",
+            "visually_reviewed": true
+          },
+          {
+            "image": "/images/v2/invoices.webp",
+            "provenance": "/images/v2/invoices.webp.capture.json",
+            "visually_reviewed": true
+          },
+          {
+            "image": "/images/v2/invoice.webp",
+            "provenance": "/images/v2/invoice.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "add-new-invoice",
+          "invoice-fields",
+          "list-invoices",
+          "invoice-lifecycle",
+          "invoiceshelf-3-document-view"
+        ]
+      },
+      "guide/estimates": {
+        "title": "Estimates",
+        "release": "2.4.6",
+        "source_commit": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v2/estimate-create.webp",
+            "provenance": "/images/v2/estimate-create.webp.capture.json",
+            "visually_reviewed": true
+          },
+          {
+            "image": "/images/v2/estimates.webp",
+            "provenance": "/images/v2/estimates.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "add-new-estimate",
+          "estimate-fields",
+          "list-estimates",
+          "invoice-fields",
+          "estimate-lifecycle"
+        ]
+      },
+      "guide/payments": {
+        "title": "Payments",
+        "release": "2.4.6",
+        "source_commit": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v2/payment-create.webp",
+            "provenance": "/images/v2/payment-create.webp.capture.json",
+            "visually_reviewed": true
+          },
+          {
+            "image": "/images/v2/payments.webp",
+            "provenance": "/images/v2/payments.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "new-payment",
+          "payment-fields",
+          "list-payments",
+          "add-new-payment"
+        ]
+      },
+      "guide/expenses": {
+        "title": "Expenses",
+        "release": "2.4.6",
+        "source_commit": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v2/expense-create.webp",
+            "provenance": "/images/v2/expense-create.webp.capture.json",
+            "visually_reviewed": true
+          },
+          {
+            "image": "/images/v2/expenses.webp",
+            "provenance": "/images/v2/expenses.webp.capture.json",
+            "visually_reviewed": true
+          },
+          {
+            "image": "/images/v2/categories.webp",
+            "provenance": "/images/v2/categories.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "add-new-expense",
+          "expense-fields",
+          "list-expenses"
+        ]
+      },
+      "guide/customer-portal": {
+        "title": "Customer portal",
+        "release": "2.4.6",
+        "source_commit": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v2/portal.webp",
+            "provenance": "/images/v2/portal.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": []
+      },
+      "guide/recurring-invoices": {
+        "title": "Recurring invoices",
+        "release": "2.4.6",
+        "source_commit": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+        "review_sources": [
+          "routes/console.php",
+          "recurring invoice routes and settled list"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v2/recurring.webp",
+            "provenance": "/images/v2/recurring.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "fields",
+          "custom-frequency-schedule",
+          "for-docker",
+          "other-providers",
+          "testing-locally"
+        ]
+      },
+      "guide/taxes": {
+        "title": "Taxes",
+        "release": "2.4.6",
+        "source_commit": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v2/taxes.webp",
+            "provenance": "/images/v2/taxes.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "tax-type-fields",
+          "what-is-a-compound-tax",
+          "example"
+        ]
+      },
+      "guide/custom-fields": {
+        "title": "Custom fields",
+        "release": "2.4.6",
+        "source_commit": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v2/custom-field-create.webp",
+            "provenance": "/images/v2/custom-field-create.webp.capture.json",
+            "visually_reviewed": true
+          },
+          {
+            "image": "/images/v2/custom-fields.webp",
+            "provenance": "/images/v2/custom-fields.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "add-new-custom-field",
+          "custom-field-options",
+          "how-to-use-custom-fields"
+        ]
+      },
+      "guide/customization": {
+        "title": "Document customization",
+        "release": "2.4.6",
+        "source_commit": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v2/customization.webp",
+            "provenance": "/images/v2/customization.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "customization",
+          "invoice-prefix",
+          "default-invoice-email-body",
+          "default-body",
+          "company-address-format",
+          "default-company-address-format",
+          "shipping-address-format",
+          "default-shipping-address-format",
+          "billing-address-format",
+          "default-billing-address-format",
+          "autogenerate-invoice-number",
+          "estimate-prefix",
+          "default-estimate-email-body",
+          "default-body-1",
+          "company-address-format-1",
+          "default-company-address-format-1",
+          "shipping-address-format-1",
+          "default-shipping-address-format-1",
+          "billing-address-format-1",
+          "default-billing-address-format-1",
+          "autogenerate-estimate-number",
+          "payment-prefix",
+          "default-payment-email-body",
+          "default-body-2",
+          "company-address-format-2",
+          "default-company-address-format-2",
+          "from-customer-address-format",
+          "from-customer-address-format-1",
+          "autogenerate-payment-number"
+        ]
+      },
+      "guide/reports": {
+        "title": "Reports",
+        "release": "2.4.6",
+        "source_commit": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v2/reports.webp",
+            "provenance": "/images/v2/reports.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "by-customer",
+          "by-item",
+          "profit-loss-report"
+        ]
+      },
+      "guide/settings": {
+        "title": "Company and account settings",
+        "release": "2.4.6",
+        "source_commit": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v2/company.webp",
+            "provenance": "/images/v2/company.webp.capture.json",
+            "visually_reviewed": true
+          },
+          {
+            "image": "/images/v2/preferences.webp",
+            "provenance": "/images/v2/preferences.webp.capture.json",
+            "visually_reviewed": true
+          },
+          {
+            "image": "/images/v2/account.webp",
+            "provenance": "/images/v2/account.webp.capture.json",
+            "visually_reviewed": true
+          },
+          {
+            "image": "/images/v2/notifications.webp",
+            "provenance": "/images/v2/notifications.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "settings",
+          "tax-types",
+          "expense-categories"
+        ]
+      },
+      "guide/members": {
+        "title": "Users and roles",
+        "release": "2.4.6",
+        "source_commit": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v2/members.webp",
+            "provenance": "/images/v2/members.webp.capture.json",
+            "visually_reviewed": true
+          },
+          {
+            "image": "/images/v2/roles.webp",
+            "provenance": "/images/v2/roles.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": []
+      },
+      "guide/mail": {
+        "title": "Email configuration",
+        "release": "2.4.6",
+        "source_commit": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v2/mail.webp",
+            "provenance": "/images/v2/mail.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "email"
+        ]
+      },
+      "guide/file-disk": {
+        "title": "File storage",
+        "release": "2.4.6",
+        "source_commit": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v2/file-disk.webp",
+            "provenance": "/images/v2/file-disk.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "file-disk",
+          "local-private",
+          "local-public"
+        ]
+      },
+      "guide/backups": {
+        "title": "Backups",
+        "release": "2.4.6",
+        "source_commit": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v2/backups.webp",
+            "provenance": "/images/v2/backups.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "fields"
+        ]
+      },
+      "guide/pdf-generation": {
+        "title": "PDF generation",
+        "release": "2.4.6",
+        "source_commit": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v2/pdf.webp",
+            "provenance": "/images/v2/pdf.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "private-networks-and-the-ssrf-guard"
+        ]
+      },
+      "guide/private-networks": {
+        "title": "Private network services",
+        "release": "2.4.6",
+        "source_commit": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "private-networks"
+        ]
+      },
+      "guide/custom-templates": {
+        "title": "Custom PDF templates",
+        "release": "2.4.6",
+        "source_commit": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+        "review_sources": [
+          "config/filesystems.php",
+          "CreateTemplateCommand.php",
+          "PdfTemplateUtils.php"
+        ],
+        "screenshots": [],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "custom-templates",
+          "with-make-template",
+          "by-hand",
+          "the-shared-line-items-table"
+        ]
+      },
+      "guide/modules": {
+        "title": "Modules",
+        "release": "2.4.6",
+        "source_commit": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v2/modules.webp",
+            "provenance": "/images/v2/modules.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": []
+      },
+      "installation": {
+        "title": "Installation",
+        "release": "2.4.6",
+        "source_commit": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+        "review_sources": [
+          "version.md",
+          "composer.json",
+          "config/invoiceshelf.php",
+          "README.md"
+        ],
+        "screenshots": [],
+        "status": "rewritten",
+        "legacy_anchors": []
+      },
+      "install/docker": {
+        "title": "Docker installation",
+        "release": "2.4.6",
+        "source_commit": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+        "review_sources": [
+          ".github/workflows/publish.yaml",
+          "InvoiceShelf/docker/docker-compose.sqlite.yml",
+          "config/session.php",
+          "config/sanctum.php"
+        ],
+        "screenshots": [],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "step-1-install-docker",
+          "step-2-clone-repository",
+          "step-3-prepare-docker-compose",
+          "_3-1-configure-your-public-address",
+          "app-url",
+          "session-domain",
+          "sanctum-stateful-domains",
+          "trusted-proxies",
+          "step-4-finalize-run-docker-compose",
+          "step-5-complete-installation-wizard",
+          "_5-1-mariadb-postgresql",
+          "_5-2-sqlite-database"
+        ]
+      },
+      "install/manual": {
+        "title": "Manual installation",
+        "release": "2.4.6",
+        "source_commit": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+        "review_sources": [
+          "composer.json",
+          "config/invoiceshelf.php",
+          ".env.example",
+          "package.json",
+          "installer source"
+        ],
+        "screenshots": [],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "step-1-download",
+          "step-2-upload-to-server",
+          "step-3-point-the-domain-to-the-uploaded-folder",
+          "step-4-fix-file-permissions",
+          "step-5-copy-environment-file",
+          "step-6-complete-installation-wizard"
+        ]
+      },
+      "developer-guide": {
+        "title": "Developer setup",
+        "release": "2.4.6",
+        "source_commit": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+        "review_sources": [
+          "AGENTS.md",
+          "package.json",
+          "composer.json"
+        ],
+        "screenshots": [],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "developer-guide",
+          "docker-environment",
+          "laravel-herd",
+          "manual-nginx-php-fpm"
+        ]
+      },
+      "developer/docker": {
+        "title": "Development with Docker",
+        "release": "2.4.6",
+        "source_commit": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+        "review_sources": [
+          "devenv",
+          "docker/development",
+          "package.json"
+        ],
+        "screenshots": [],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "setting-up-with-docker",
+          "step-1-clone-the-repository",
+          "step-2-start-the-development-environment",
+          "step-3-install-application-dependencies",
+          "step-4-access-the-application",
+          "useful-details",
+          "a-working-with-composer-pnpm-and-tests",
+          "b-previewing-the-database",
+          "c-previewing-mail"
+        ]
+      },
+      "developer/manual": {
+        "title": "Development with Nginx and PHP-FPM",
+        "release": "2.4.6",
+        "source_commit": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+        "review_sources": [
+          ".env.example",
+          "composer.json",
+          "package.json",
+          "docker/development/nginx"
+        ],
+        "screenshots": [],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "setting-up-with-nginx-php-fpm",
+          "step-1-install-dependencies",
+          "step-2-clone-the-repository",
+          "step-3-set-up-environment-variables",
+          "step-4-install-dependencies",
+          "step-5-generate-application-key",
+          "step-6-migrate-the-database",
+          "step-7-configure-nginx",
+          "step-8-access-the-application"
+        ]
+      },
+      "developer/laravel-herd": {
+        "title": "Development with Laravel Herd",
+        "release": "2.4.6",
+        "source_commit": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+        "review_sources": [
+          "composer.json",
+          "package.json",
+          ".env.example"
+        ],
+        "screenshots": [],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "setting-up-with-laravel-herd",
+          "step-1-install-laravel-herd",
+          "step-2-clone-the-repository",
+          "step-3-set-up-environment-variables",
+          "step-4-install-dependencies",
+          "step-5-generate-application-key",
+          "step-6-migrate-the-database",
+          "step-7-start-laravel-herd",
+          "step-8-access-the-application"
+        ]
+      },
+      "migration-guide": {
+        "title": "Migration and updates",
+        "release": "2.4.6",
+        "source_commit": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+        "review_sources": [
+          "database/migrations",
+          "README.md",
+          "version.md"
+        ],
+        "screenshots": [],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "migration-guide"
+        ]
+      },
+      "translation-guide": {
+        "title": "Translations",
+        "release": "2.4.6",
+        "source_commit": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+        "review_sources": [
+          "crowdin.yml",
+          "lang/en.json",
+          "package.json"
+        ],
+        "screenshots": [],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "translation-guide",
+          "step-1-go-to-crowdin",
+          "step-2-open-in-editor",
+          "step-3-select-language",
+          "step-4-start-translating"
+        ]
+      },
+      "mobile": {
+        "title": "Mobile access",
+        "release": "2.4.6",
+        "source_commit": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+        "review_sources": [
+          "repository tree",
+          "package.json"
+        ],
+        "screenshots": [],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "mobile-apps"
+        ]
+      },
+      "guide/ai-assistants": {
+        "status": "not_applicable",
+        "reason": "MCP server is absent from the v2 release. No v2 page or navigation entry is published.",
+        "source_commit": "0287adf6472dd4fe0f6f731c966afcd685086bdb"
+      },
+      "guide/fonts": {
+        "status": "not_applicable",
+        "reason": "The v3 PDF font-package manager is absent from v2; v2 PDF guidance describes its renderer."
+      },
+      "guide/account-security": {
+        "status": "covered_elsewhere",
+        "reason": "V2 profile/password controls are covered in guide/settings; v3 separate account pages do not exist."
+      }
+    },
+    "3": {
+      "index": {
+        "title": "InvoiceShelf 3 documentation",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          "README.md",
+          "version.md"
+        ],
+        "screenshots": [],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "introduction",
+          "features"
+        ]
+      },
+      "guide/dashboard": {
+        "title": "Dashboard",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v3/dashboard.webp",
+            "provenance": "/images/v3/dashboard.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": []
+      },
+      "guide/customers": {
+        "title": "Customers",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v3/customer-create.webp",
+            "provenance": "/images/v3/customer-create.webp.capture.json",
+            "visually_reviewed": true
+          },
+          {
+            "image": "/images/v3/customers.webp",
+            "provenance": "/images/v3/customers.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "add-new-customer",
+          "customer-fields",
+          "list-customers"
+        ]
+      },
+      "guide/items": {
+        "title": "Items",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v3/item-create.webp",
+            "provenance": "/images/v3/item-create.webp.capture.json",
+            "visually_reviewed": true
+          },
+          {
+            "image": "/images/v3/items.webp",
+            "provenance": "/images/v3/items.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "add-new-item",
+          "item-fields",
+          "items-page",
+          "list-items"
+        ]
+      },
+      "guide/invoices": {
+        "title": "Invoices",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v3/invoice-create.webp",
+            "provenance": "/images/v3/invoice-create.webp.capture.json",
+            "visually_reviewed": true
+          },
+          {
+            "image": "/images/v3/invoices.webp",
+            "provenance": "/images/v3/invoices.webp.capture.json",
+            "visually_reviewed": true
+          },
+          {
+            "image": "/images/v3/invoice.webp",
+            "provenance": "/images/v3/invoice.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "add-new-invoice",
+          "invoice-fields",
+          "list-invoices",
+          "invoice-lifecycle",
+          "invoiceshelf-3-document-view"
+        ]
+      },
+      "guide/estimates": {
+        "title": "Estimates",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v3/estimate-create.webp",
+            "provenance": "/images/v3/estimate-create.webp.capture.json",
+            "visually_reviewed": true
+          },
+          {
+            "image": "/images/v3/estimates.webp",
+            "provenance": "/images/v3/estimates.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "add-new-estimate",
+          "estimate-fields",
+          "list-estimates",
+          "invoice-fields",
+          "estimate-lifecycle"
+        ]
+      },
+      "guide/payments": {
+        "title": "Payments",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v3/payment-create.webp",
+            "provenance": "/images/v3/payment-create.webp.capture.json",
+            "visually_reviewed": true
+          },
+          {
+            "image": "/images/v3/payments.webp",
+            "provenance": "/images/v3/payments.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "new-payment",
+          "payment-fields",
+          "list-payments",
+          "add-new-payment"
+        ]
+      },
+      "guide/expenses": {
+        "title": "Expenses",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v3/expense-create.webp",
+            "provenance": "/images/v3/expense-create.webp.capture.json",
+            "visually_reviewed": true
+          },
+          {
+            "image": "/images/v3/expenses.webp",
+            "provenance": "/images/v3/expenses.webp.capture.json",
+            "visually_reviewed": true
+          },
+          {
+            "image": "/images/v3/categories.webp",
+            "provenance": "/images/v3/categories.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "add-new-expense",
+          "expense-fields",
+          "list-expenses"
+        ]
+      },
+      "guide/customer-portal": {
+        "title": "Customer portal",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v3/portal.webp",
+            "provenance": "/images/v3/portal.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": []
+      },
+      "guide/recurring-invoices": {
+        "title": "Recurring invoices",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          "routes/console.php",
+          "recurring invoice routes and settled list"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v3/recurring.webp",
+            "provenance": "/images/v3/recurring.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "fields",
+          "custom-frequency-schedule",
+          "for-docker",
+          "other-providers",
+          "testing-locally"
+        ]
+      },
+      "guide/taxes": {
+        "title": "Taxes",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v3/taxes.webp",
+            "provenance": "/images/v3/taxes.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "tax-type-fields",
+          "what-is-a-compound-tax",
+          "example"
+        ]
+      },
+      "guide/custom-fields": {
+        "title": "Custom fields",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v3/custom-field-create.webp",
+            "provenance": "/images/v3/custom-field-create.webp.capture.json",
+            "visually_reviewed": true
+          },
+          {
+            "image": "/images/v3/custom-fields.webp",
+            "provenance": "/images/v3/custom-fields.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "add-new-custom-field",
+          "custom-field-options",
+          "how-to-use-custom-fields"
+        ]
+      },
+      "guide/customization": {
+        "title": "Document customization",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v3/customization.webp",
+            "provenance": "/images/v3/customization.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "customization",
+          "invoice-prefix",
+          "default-invoice-email-body",
+          "default-body",
+          "company-address-format",
+          "default-company-address-format",
+          "shipping-address-format",
+          "default-shipping-address-format",
+          "billing-address-format",
+          "default-billing-address-format",
+          "autogenerate-invoice-number",
+          "estimate-prefix",
+          "default-estimate-email-body",
+          "default-body-1",
+          "company-address-format-1",
+          "default-company-address-format-1",
+          "shipping-address-format-1",
+          "default-shipping-address-format-1",
+          "billing-address-format-1",
+          "default-billing-address-format-1",
+          "autogenerate-estimate-number",
+          "payment-prefix",
+          "default-payment-email-body",
+          "default-body-2",
+          "company-address-format-2",
+          "default-company-address-format-2",
+          "from-customer-address-format",
+          "from-customer-address-format-1",
+          "autogenerate-payment-number"
+        ]
+      },
+      "guide/reports": {
+        "title": "Reports",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v3/reports.webp",
+            "provenance": "/images/v3/reports.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "by-customer",
+          "by-item",
+          "profit-loss-report"
+        ]
+      },
+      "guide/settings": {
+        "title": "Company and account settings",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v3/company.webp",
+            "provenance": "/images/v3/company.webp.capture.json",
+            "visually_reviewed": true
+          },
+          {
+            "image": "/images/v3/preferences.webp",
+            "provenance": "/images/v3/preferences.webp.capture.json",
+            "visually_reviewed": true
+          },
+          {
+            "image": "/images/v3/notifications.webp",
+            "provenance": "/images/v3/notifications.webp.capture.json",
+            "visually_reviewed": true
+          },
+          {
+            "image": "/images/v3/admin-settings.webp",
+            "provenance": "/images/v3/admin-settings.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "settings",
+          "tax-types",
+          "expense-categories"
+        ]
+      },
+      "guide/members": {
+        "title": "Members and roles",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v3/members.webp",
+            "provenance": "/images/v3/members.webp.capture.json",
+            "visually_reviewed": true
+          },
+          {
+            "image": "/images/v3/roles.webp",
+            "provenance": "/images/v3/roles.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": []
+      },
+      "guide/mail": {
+        "title": "Email configuration",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v3/mail.webp",
+            "provenance": "/images/v3/mail.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "email"
+        ]
+      },
+      "guide/file-disk": {
+        "title": "File storage",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v3/file-disk.webp",
+            "provenance": "/images/v3/file-disk.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "file-disk",
+          "local-private",
+          "local-public"
+        ]
+      },
+      "guide/backups": {
+        "title": "Backups",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v3/backups.webp",
+            "provenance": "/images/v3/backups.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "fields"
+        ]
+      },
+      "guide/pdf-generation": {
+        "title": "PDF generation",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v3/pdf.webp",
+            "provenance": "/images/v3/pdf.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "private-networks-and-the-ssrf-guard"
+        ]
+      },
+      "guide/private-networks": {
+        "title": "Private network services",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "private-networks"
+        ]
+      },
+      "guide/custom-templates": {
+        "title": "Custom PDF templates",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          "config/filesystems.php",
+          "CreateTemplateCommand.php",
+          "PdfTemplateUtils.php"
+        ],
+        "screenshots": [],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "custom-templates",
+          "with-make-template",
+          "by-hand",
+          "the-shared-line-items-table"
+        ]
+      },
+      "guide/modules": {
+        "title": "Modules",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          "release source and settled application screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v3/admin-modules.webp",
+            "provenance": "/images/v3/admin-modules.webp.capture.json",
+            "visually_reviewed": true
+          },
+          {
+            "image": "/images/v3/modules.webp",
+            "provenance": "/images/v3/modules.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": []
+      },
+      "installation": {
+        "title": "Installation",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          "version.md",
+          "composer.json",
+          "config/invoiceshelf.php",
+          "README.md"
+        ],
+        "screenshots": [],
+        "status": "rewritten",
+        "legacy_anchors": []
+      },
+      "install/docker": {
+        "title": "Docker installation",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          ".github/workflows/publish.yaml",
+          "InvoiceShelf/docker/docker-compose.sqlite.yml",
+          "config/session.php",
+          "config/sanctum.php"
+        ],
+        "screenshots": [],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "step-1-install-docker",
+          "step-2-clone-repository",
+          "step-3-prepare-docker-compose",
+          "_3-1-configure-your-public-address",
+          "app-url",
+          "session-domain",
+          "sanctum-stateful-domains",
+          "trusted-proxies",
+          "step-4-finalize-run-docker-compose",
+          "step-5-complete-installation-wizard",
+          "_5-1-mariadb-postgresql",
+          "_5-2-sqlite-database"
+        ]
+      },
+      "install/manual": {
+        "title": "Manual installation",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          "composer.json",
+          "config/invoiceshelf.php",
+          ".env.example",
+          "package.json",
+          "installer source"
+        ],
+        "screenshots": [],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "step-1-download",
+          "step-2-upload-to-server",
+          "step-3-point-the-domain-to-the-uploaded-folder",
+          "step-4-fix-file-permissions",
+          "step-5-copy-environment-file",
+          "step-6-complete-installation-wizard"
+        ]
+      },
+      "developer-guide": {
+        "title": "Developer setup",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          "AGENTS.md",
+          "package.json",
+          "composer.json"
+        ],
+        "screenshots": [],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "developer-guide",
+          "docker-environment",
+          "laravel-herd",
+          "manual-nginx-php-fpm"
+        ]
+      },
+      "developer/docker": {
+        "title": "Development with Docker",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          "devenv",
+          "docker/development",
+          "package.json"
+        ],
+        "screenshots": [],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "setting-up-with-docker",
+          "step-1-clone-the-repository",
+          "step-2-start-the-development-environment",
+          "step-3-install-application-dependencies",
+          "step-4-access-the-application",
+          "useful-details",
+          "a-working-with-composer-pnpm-and-tests",
+          "b-previewing-the-database",
+          "c-previewing-mail"
+        ]
+      },
+      "developer/manual": {
+        "title": "Development with Nginx and PHP-FPM",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          ".env.example",
+          "composer.json",
+          "package.json",
+          "docker/development/nginx"
+        ],
+        "screenshots": [],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "setting-up-with-nginx-php-fpm",
+          "step-1-install-dependencies",
+          "step-2-clone-the-repository",
+          "step-3-set-up-environment-variables",
+          "step-4-install-dependencies",
+          "step-5-generate-application-key",
+          "step-6-migrate-the-database",
+          "step-7-configure-nginx",
+          "step-8-access-the-application"
+        ]
+      },
+      "developer/laravel-herd": {
+        "title": "Development with Laravel Herd",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          "composer.json",
+          "package.json",
+          ".env.example"
+        ],
+        "screenshots": [],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "setting-up-with-laravel-herd",
+          "step-1-install-laravel-herd",
+          "step-2-clone-the-repository",
+          "step-3-set-up-environment-variables",
+          "step-4-install-dependencies",
+          "step-5-generate-application-key",
+          "step-6-migrate-the-database",
+          "step-7-start-laravel-herd",
+          "step-8-access-the-application"
+        ]
+      },
+      "migration-guide": {
+        "title": "Migration and updates",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          "database/migrations",
+          "README.md",
+          "version.md"
+        ],
+        "screenshots": [],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "migration-guide"
+        ]
+      },
+      "translation-guide": {
+        "title": "Translations",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          "crowdin.yml",
+          "lang/en.json",
+          "package.json"
+        ],
+        "screenshots": [],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "translation-guide",
+          "step-1-go-to-crowdin",
+          "step-2-open-in-editor",
+          "step-3-select-language",
+          "step-4-start-translating"
+        ]
+      },
+      "mobile": {
+        "title": "Mobile access",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          "mobile/README.md",
+          "package.json"
+        ],
+        "screenshots": [],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "mobile-apps"
+        ]
+      },
+      "guide/fonts": {
+        "title": "PDF font packages",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          "config/pdf.php",
+          "PDF font command and settings screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v3/fonts.webp",
+            "provenance": "/images/v3/fonts.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": []
+      },
+      "guide/account-security": {
+        "title": "Your account and security",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          "account-settings routes and views"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v3/account.webp",
+            "provenance": "/images/v3/account.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": []
+      },
+      "guide/ai-assistants": {
+        "title": "AI assistants (MCP)",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_sources": [
+          "config/mcp.php",
+          "app/Platform/Mcp",
+          "MCP settings screen"
+        ],
+        "screenshots": [
+          {
+            "image": "/images/v3/ai-connections.webp",
+            "provenance": "/images/v3/ai-connections.webp.capture.json",
+            "visually_reviewed": true
+          },
+          {
+            "image": "/images/v3/connected-apps.webp",
+            "provenance": "/images/v3/connected-apps.webp.capture.json",
+            "visually_reviewed": true
+          }
+        ],
+        "status": "rewritten",
+        "legacy_anchors": [
+          "requirements",
+          "safety"
+        ]
+      }
+    }
+  }
+}

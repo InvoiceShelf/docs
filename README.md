@@ -19,29 +19,51 @@ composer --working-dir=.github/validator install
 php .github/validator/validate.php .
 ```
 
-Leave review hashes unchanged when editing a guide; maintainers verify the changed advice before approving it for AI answers.
+Leave review hashes unchanged while editing; maintainers verify the changed advice before approving the new publication.
 
 Without Docker, run `php artisan docs:validate ../docs` or `docs:import ../docs --no-index` in the website checkout. Neither requires an AI key. Navigation is defined by `docs.json`; Markdown stays under `docs/` and images under `docs/public/images/`.
 
-Use Markdown relative links (`./mail.md#private-networks`). The website rewrites them to canonical `/docs/...` URLs. Images such as `/images/dashboard.png` become immutable stored assets. Validation catches broken paths, anchors, missing images and unsafe links before publication. Raw HTML is escaped; use Markdown equivalents.
+Use Markdown relative links (`./mail.md#private-networks`). The website rewrites them to canonical `/docs/...` URLs. Images such as `/images/v3/dashboard.webp` become immutable stored assets. Validation catches broken paths, anchors, missing images and unsafe links before publication. Raw HTML is escaped; use Markdown equivalents.
 
 ## Screenshots
 
 The screenshot CLI and agent skill live in devenv, outside application dependencies. Use `make screenshot ARGS='--help'` and the named recipes described in the skill. Capture real UI using isolated demo data, the guide's actual app version, a fixed viewport and readiness checks. Commit approved images and their `.capture.json` provenance files; cookies and credentials never belong here.
 
-## Versions and AI review
+## Versioned books and review
 
-Guides remain readable and keyword-searchable even when their applicability is unknown. Declare verified major versions in front matter. Only content with a current review hash is used for AI answers:
+`docs.json` schema 2 declares v2 (2.4.6) and v3 (3.0.0-alpha.10), with pinned
+application commits and separate navigation. v3 is the default book and the only
+source for AI answers. The reader routes are `/docs/v2/...` and `/docs/v3/...`;
+`/docs` redirects to v3. Switching books keeps a matching topic, or opens the
+selected book's overview with a notice. v2 offers keyword search and a link to v3
+instead of an Ask AI tab.
+
+Content lives in `docs/v2/` and `docs/v3/`. Relative links resolve within that book.
+Use `/docs/v2/...` for an intentional link from v3 to older instructions. Existing
+unversioned URLs use the manifest's redirect map, and `anchor_aliases` preserve
+old heading bookmarks. Legacy screenshots remain available at their old paths.
 
 ```yaml
 ---
 versions: ['3']
-rag_reviewed_hash: <digest printed by docs:review-hash>
-reviewed_against: <inspected application commit>
+reviewed_against: c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7
+reviewed_hash: <digest printed by docs:review-hash>
+anchor_aliases:
+  old-heading: current-heading
 ---
 ```
 
-After checking the guide against that version, run `php artisan docs:review-hash ../docs/docs/guide/<name>.md` from website. The hash covers body and versions; any change invalidates it. Never automatically regenerate review hashes during CI. A small reviewed corpus is preferable to confident answers from outdated instructions.
+After checking the advice against the pinned release, run
+`php artisan docs:review-hash ../docs/docs/v3/guide/<name>.md` from website. The
+hash covers body, versions and optional title. The importer requires a current
+review for every page in both books; a stale review prevents publication of the
+whole new revision. It does not remove the previous live revision.
+
+`content-review.json` tracks rewritten topics, intentional version exclusions and
+screenshot evidence. All current images were captured from the declared releases
+in isolated fixtures, visually inspected and encoded as WebP. Version, commit,
+dirty state and file hash are checked from each `.capture.json` sidecar. Update
+text, screenshots and the catalog baseline together when reviewing another release.
 
 ## Publication
 
