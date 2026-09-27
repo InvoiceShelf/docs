@@ -1,6 +1,7 @@
 ---
 title: Manual Installation
-lang: en-US
+lang: en
+versions: []
 ---
 
 # Manual Installation

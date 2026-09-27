@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "app": "v3",
+  "route": "/admin/administration/settings/mcp",
+  "recipe": "v3-settings",
+  "fixture": "v3-realistic-2026-09-01",
+  "source_revision": "d133dfcb76b458849a371388690004ac86e73379",
+  "source_dirty": false,
+  "captured_at": "2026-09-27T10:22:39.635Z",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "scale": 2,
+  "theme": "light",
+  "browser": "149.0.7827.55",
+  "sha256": "71c4205b3b0ce9e74e225f73c1b97dc1026bbf44a3ded0216d135102f831226f"
+}

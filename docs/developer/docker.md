@@ -1,6 +1,7 @@
 ---
 title: Setting Up with Docker
-lang: en-US
+lang: en
+versions: ['2']
 ---
 
 # Setting Up with Docker

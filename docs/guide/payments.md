@@ -1,3 +1,7 @@
+---
+versions: []
+---
+
 # Payments
 
 Payments are basically entries for Payments that you receieved from your Customers. You can access the payments tab from the sidebar menu.

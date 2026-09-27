@@ -1,3 +1,7 @@
+---
+versions: []
+---
+
 # Custom Fields
 
 As the name suggests, you can add your own fields to Customer, Invoice, Estimate, Payment & Expenses. This allows you to customise the application according to your requirements.

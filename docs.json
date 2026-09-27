@@ -1,0 +1,144 @@
+{
+  "schema": 1,
+  "navigation": [
+    {
+      "title": "Get started",
+      "items": [
+        {
+          "title": "Installation",
+          "slug": "installation"
+        },
+        {
+          "title": "Developers",
+          "slug": "developer-guide"
+        },
+        {
+          "title": "Migration",
+          "slug": "migration-guide"
+        },
+        {
+          "title": "Translations",
+          "slug": "translation-guide"
+        }
+      ]
+    },
+    {
+      "title": "User guide",
+      "items": [
+        {
+          "title": "Dashboard",
+          "slug": "guide/dashboard"
+        },
+        {
+          "title": "Customers",
+          "slug": "guide/customers"
+        },
+        {
+          "title": "Customer portal",
+          "slug": "guide/customer-portal"
+        },
+        {
+          "title": "Items",
+          "slug": "guide/items"
+        },
+        {
+          "title": "Estimates",
+          "slug": "guide/estimates"
+        },
+        {
+          "title": "Invoices",
+          "slug": "guide/invoices"
+        },
+        {
+          "title": "Recurring Invoices",
+          "slug": "guide/recurring-invoices"
+        },
+        {
+          "title": "Payments",
+          "slug": "guide/payments"
+        },
+        {
+          "title": "Expenses",
+          "slug": "guide/expenses"
+        },
+        {
+          "title": "Taxes",
+          "slug": "guide/taxes"
+        },
+        {
+          "title": "Custom Fields",
+          "slug": "guide/custom-fields"
+        },
+        {
+          "title": "Custom Templates",
+          "slug": "guide/custom-templates"
+        },
+        {
+          "title": "PDF Generation",
+          "slug": "guide/pdf-generation"
+        },
+        {
+          "title": "Email",
+          "slug": "guide/mail"
+        },
+        {
+          "title": "Private Networks",
+          "slug": "guide/private-networks"
+        },
+        {
+          "title": "AI Assistants (MCP)",
+          "slug": "guide/ai-assistants"
+        },
+        {
+          "title": "File Disk",
+          "slug": "guide/file-disk"
+        },
+        {
+          "title": "Backups",
+          "slug": "guide/backups"
+        },
+        {
+          "title": "Customization",
+          "slug": "guide/customization"
+        },
+        {
+          "title": "Reports",
+          "slug": "guide/reports"
+        },
+        {
+          "title": "Settings",
+          "slug": "guide/settings"
+        }
+      ]
+    },
+    {
+      "title": "Installation and development",
+      "items": [
+        {
+          "title": "Docker installation",
+          "slug": "install/docker"
+        },
+        {
+          "title": "Manual installation",
+          "slug": "install/manual"
+        },
+        {
+          "title": "Development with Docker",
+          "slug": "developer/docker"
+        },
+        {
+          "title": "Development with Herd",
+          "slug": "developer/laravel-herd"
+        },
+        {
+          "title": "Development with NGINX",
+          "slug": "developer/manual"
+        },
+        {
+          "title": "Mobile app",
+          "slug": "mobile"
+        }
+      ]
+    }
+  ]
+}

@@ -1,16 +1,26 @@
+---
+versions: ['3']
+rag_reviewed_hash: f6502765e2e4201c22942a7230b9ca814e6068dd97e32ef621069d83c46e70bb
+reviewed_against: d133dfcb76b458849a371388690004ac86e73379
+---
+
 # AI Assistants (MCP)
 
 InvoiceShelf 3 can be used from AI assistants such as Claude, ChatGPT, Claude Code and Cursor. It speaks the [Model Context Protocol](https://modelcontextprotocol.io) (MCP): you connect an assistant once, pick the company it works in and what it may do, and then ask it things like "which invoices are overdue?" or "invoice Acme for 10 hours of consulting at 120 with VAT".
 
 The assistant works through InvoiceShelf, not around it. It sees what your role in the company lets you see, every change goes through the same validation as the app's own forms, and InvoiceShelf does all the arithmetic, so totals match what the invoice form would show.
 
-::: tip Availability
-The MCP server arrives in InvoiceShelf 3.0.0-alpha.5. It is off until a super admin switches it on.
-:::
+> **Tip: Availability**
+>
+> The MCP server arrives in InvoiceShelf 3.0.0-alpha.5. It is off until a super admin switches it on.
 
 ## Switching it on
 
 A super admin allows assistants under **Administration → Settings → AI connections**. The page shows the server address to hand out, for example `https://invoices.example.com/mcp`.
+
+![InvoiceShelf 3 AI connection settings in an isolated local demo](/images/ai-connections-v3.png)
+
+*Local demo shown. Its HTTPS warning is expected: use HTTPS before connecting a real assistant.*
 
 From the command line the same is:
 
@@ -67,9 +77,9 @@ The assistant describes a document (the customer, the lines, the taxes) and Invo
 - **You stay in control.** Under **Connected apps** you can make a connection read-only or disconnect it at once. To give an app write access again after making it read-only, disconnect it and connect it anew.
 - **Starting over.** Replacing the signing keys on the admin page signs every assistant out; each has to connect again.
 
-::: warning Updating from an image with a shipped key
-When an update replaces an `APP_KEY` that shipped with an older Docker image, connected assistants are signed out as well and have to connect again.
-:::
+> **Warning: Updating from an image with a shipped key**
+>
+> When an update replaces an `APP_KEY` that shipped with an older Docker image, connected assistants are signed out as well and have to connect again.
 
 ## Redirect domains
 

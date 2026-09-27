@@ -1,6 +1,7 @@
 ---
 title: Translation Guide
-lang: en-US
+lang: en
+versions: []
 ---
 
 # Translation Guide

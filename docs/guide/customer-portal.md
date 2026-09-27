@@ -1,3 +1,7 @@
+---
+versions: []
+---
+
 # Customer Portal
 
 The Customer Portal allows your customers to view their invoices, make payments, and manage their profiles. This guide will help you set up and navigate the Customer Portal.

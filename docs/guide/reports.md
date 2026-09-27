@@ -1,3 +1,7 @@
+---
+versions: []
+---
+
 # Reports
 
 There are four different types of reports that can be used to generate a document that gives of your finances.

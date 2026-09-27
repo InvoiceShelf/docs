@@ -1,3 +1,7 @@
+---
+versions: []
+---
+
 # Dashboard
 
 As the name suggests, the dashboard is your primary page which displays the entire overview of the app everytime you login to the app.
@@ -7,4 +11,6 @@ You can view the overall, Amount that is due, Your number of customers, Number o
 The graph below shows sales, receipts, expenses and net income for the particular year and upon hovering on a particular month, you can see the data of that month. You can also select the previous year from the filter tab on the top right corner of the graph.
 Finally it shows the list of invoices that are due and your most recent estimates.
 
-![Dashboard Page](/images/dashboard.png)
+![InvoiceShelf 3 dashboard with populated demo invoices and cash flow](/images/dashboard-v3.png)
+
+*Screenshot: InvoiceShelf 3, using an isolated demo company.*

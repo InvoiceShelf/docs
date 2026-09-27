@@ -1,3 +1,7 @@
+---
+versions: ['3']
+---
+
 # PDF Generation
 
 InvoiceShelf renders invoices, estimates and payment receipts to PDF using one of two drivers. **dompdf** is the default and needs nothing extra. **Gotenberg** renders through headless Chromium and produces noticeably better output, at the cost of running one more service.
@@ -75,11 +79,11 @@ Since `http://pdf:3000` resolves to a private address, that guard would block th
 GOTENBERG_ALLOWED_PRIVATE_HOST=http://pdf:3000
 ```
 
-::: warning It names a host, not an on/off switch
-Only the exact value you set here is exempt. Pointing the Gotenberg host at any *other* private address is still refused, so the exemption cannot be reused to reach the rest of your network.
-
-This is also why the setting is environment-only and absent from the admin UI: the person who decides a private host is trustworthy should be the person who controls the network, not anyone who can reach a settings page.
-:::
+> **Warning: It names a host, not an on/off switch**
+>
+> Only the exact value you set here is exempt. Pointing the Gotenberg host at any *other* private address is still refused, so the exemption cannot be reused to reach the rest of your network.
+>
+> This is also why the setting is environment-only and absent from the admin UI: the person who decides a private host is trustworthy should be the person who controls the network, not anyone who can reach a settings page.
 
 The value must match what you enter as the Gotenberg host, though comparison ignores capitalisation and a trailing slash. If the two differ in any other way — a different port, `https` instead of `http`, a path — the exemption does not apply. The other features with a private-network exemption are listed on the [Private Networks](./private-networks.md) page.
 

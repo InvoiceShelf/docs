@@ -1,6 +1,7 @@
 ---
 title: Migration Guide
-lang: en-US
+lang: en
+versions: []
 ---
 
 # Migration Guide
@@ -11,7 +12,7 @@ The migration should be simple because there aren't huge differences between the
 
 Step by step:
 
-1. Download <a href="https://invoiceshelf.com/" target="_blank">InvoiceShelf</a> application.
+1. Download [InvoiceShelf](https://invoiceshelf.com/) application.
 2. Unzip InvoiceShelf ZIP that you downloaded to your website directory
 3. Copy the old Crater's installation `storage` directory to InvoiceShelf website directory
 4. Copy .env file from Crater's installation directory to InvoiceShelf website directory

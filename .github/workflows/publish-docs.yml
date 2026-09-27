@@ -1,0 +1,40 @@
+name: Validate and publish documentation
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: docs-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          path: content
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          extensions: pdo_sqlite, gd, exif, zip, intl, bcmath
+          coverage: none
+      - name: Install the canonical Markdown validator
+        working-directory: content/.github/validator
+        run: composer install --prefer-dist --no-progress --no-interaction
+      - name: Validate source, navigation, anchors, and assets
+        working-directory: content/.github/validator
+        run: php validate.php ../..
+  publish:
+    if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Import this revision and wait for publication
+        env:
+          CI_DOCS_TOKEN: ${{ secrets.CI_DOCS_TOKEN }}
+          DOCS_COMMIT: ${{ github.sha }}
+        run: python3 .github/scripts/publish-docs.py

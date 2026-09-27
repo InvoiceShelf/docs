@@ -1,6 +1,7 @@
 ---
 title: Installation
-lang: en-US
+lang: en
+versions: ['2']
 ---
 
 # Installation

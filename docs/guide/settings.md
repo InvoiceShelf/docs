@@ -1,3 +1,7 @@
+---
+versions: []
+---
+
 # Settings
 
 You can make various changes to your web application using the settings page:

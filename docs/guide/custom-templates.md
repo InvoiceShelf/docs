@@ -1,3 +1,7 @@
+---
+versions: ['3']
+---
+
 # Custom Templates
 
 InvoiceShelf ships three invoice designs and three estimate designs. You can add your own, and they appear alongside the built-in ones in the **Choose a Template** dialog.
@@ -8,9 +12,9 @@ Custom templates live outside the application code, so they survive upgrades and
 storage/app/templates/pdf/{invoice|estimate}/{template_name}.blade.php
 ```
 
-::: warning Note the `app/` segment
-Earlier versions of this page documented `storage/templates/pdf/`. That path does not work: a template placed there is never found. The correct location is `storage/app/templates/pdf/`.
-:::
+> **Warning: Note the `app/` segment**
+>
+> Earlier versions of this page documented `storage/templates/pdf/`. That path does not work: a template placed there is never found. The correct location is `storage/app/templates/pdf/`.
 
 ## Creating a template
 
@@ -65,12 +69,12 @@ The built-in designs pull their line-items table from a partial, and a cloned te
 @include('pdf_templates::invoice.partials.table')
 ```
 
-::: warning One table, shared by all your custom templates
-That partial is written once, the first time you create a custom template of a type, and every later one of that type includes the *same* file. Editing
-`storage/app/templates/pdf/invoice/partials/table.blade.php` changes the table for **all** your custom invoice templates, not just the one you are working on.
-
-If you need different tables, point each template at its own copy: create a second file next to it and change that template's `@include` to match.
-:::
+> **Warning: One table, shared by all your custom templates**
+>
+> That partial is written once, the first time you create a custom template of a type, and every later one of that type includes the *same* file. Editing
+> `storage/app/templates/pdf/invoice/partials/table.blade.php` changes the table for **all** your custom invoice templates, not just the one you are working on.
+>
+> If you need different tables, point each template at its own copy: create a second file next to it and change that template's `@include` to match.
 
 ## Fonts
 

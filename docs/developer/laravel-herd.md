@@ -1,6 +1,7 @@
 ---
 title: Setting Up with Laravel Herd
-lang: en-US
+lang: en
+versions: []
 ---
 
 # Setting Up with Laravel Herd

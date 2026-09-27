@@ -1,3 +1,7 @@
+---
+versions: []
+---
+
 # Recurring Invoices
 
 As the name suggests, Recurring Invoices are for automatically creating invoices on a given schedule & limit. If you have a client or customer whom you're regularly billing the same invoice regularly then you can use this feature to automatically create and send the invoices.

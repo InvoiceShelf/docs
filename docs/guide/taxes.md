@@ -1,3 +1,7 @@
+---
+versions: []
+---
+
 # Taxes
 
 InvoiceShelf makes it really easy to manage taxes. You can add multiple taxes on Total Invoice Amount or on Per-Item basis.

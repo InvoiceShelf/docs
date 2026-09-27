@@ -1,3 +1,7 @@
+---
+versions: []
+---
+
 # Introduction
 
 InvoiceShelf is an open-source, self-hosted web application for creating professional

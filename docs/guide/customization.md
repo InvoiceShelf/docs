@@ -1,3 +1,7 @@
+---
+versions: []
+---
+
 # Customization
 
 You can customize all of your PDFs and email formats according to your requirements.

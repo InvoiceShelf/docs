@@ -1,6 +1,7 @@
 ---
 title: Setting Up with NGINX/PHP-FPM
-lang: en-US
+lang: en
+versions: ['3']
 ---
 
 # Setting Up with NGINX/PHP-FPM

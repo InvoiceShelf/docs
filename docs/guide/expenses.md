@@ -1,3 +1,7 @@
+---
+versions: []
+---
+
 # Expenses
 
 You can access the expenses tab from the sidebar menu.

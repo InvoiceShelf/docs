@@ -1,3 +1,7 @@
+---
+versions: []
+---
+
 # Mobile apps
 
 InvoiceShelf is currently available as a web application. Native mobile apps are not

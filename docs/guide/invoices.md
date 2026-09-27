@@ -1,3 +1,7 @@
+---
+versions: []
+---
+
 # Invoices
 
 You can access the invoices tab from the sidebar menu.
@@ -36,3 +40,9 @@ Below are the different statuses of an invoice:
 - **Viewed:** Invoice has been viewed by the customer.
 - **Overdue:** Invoice has passed the `due_date` set by you.
 - **Completed:** Invoice has been fully paid and marked as completed.
+
+## InvoiceShelf 3 document view
+
+The v3 document view brings the invoice summary, payment action and PDF preview together. This capture uses an isolated demo company.
+
+![InvoiceShelf 3 invoice details and the actual PDF preview](/images/invoice-detail-v3.png)

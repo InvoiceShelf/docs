@@ -1,4 +1,12 @@
+---
+versions: ['3']
+rag_reviewed_hash: 0922168dd99a8ec7e0a84240dcf637dafa983c022b2a26c16384a4161e186842
+reviewed_against: d133dfcb76b458849a371388690004ac86e73379
+---
+
 # Email
+
+This guide covers self-hosted InvoiceShelf 3. On managed Cloud hosting, the provider controls server mail; a company can configure its own public SMTP server.
 
 InvoiceShelf sends invoices, estimates, payment receipts and customer statements by email. It uses one of these transports: SMTP, sendmail, PHP's `mail`, Amazon SES, Mailgun or Postmark.
 
