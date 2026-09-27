@@ -12,7 +12,7 @@
           "title": "Get started",
           "items": [
             {
-              "title": "InvoiceShelf 2 documentation",
+              "title": "Overview",
               "slug": "index"
             },
             {
@@ -20,7 +20,7 @@
               "slug": "installation"
             },
             {
-              "title": "Migration and updates",
+              "title": "Upgrading",
               "slug": "migration-guide"
             }
           ]
@@ -71,10 +71,10 @@
           ]
         },
         {
-          "title": "Company and account",
+          "title": "Company & account",
           "items": [
             {
-              "title": "Company and account settings",
+              "title": "Settings",
               "slug": "guide/settings"
             },
             {
@@ -90,7 +90,7 @@
               "slug": "guide/custom-fields"
             },
             {
-              "title": "Document customization",
+              "title": "Customization",
               "slug": "guide/customization"
             },
             {
@@ -103,7 +103,7 @@
           "title": "Administration",
           "items": [
             {
-              "title": "Email configuration",
+              "title": "Email",
               "slug": "guide/mail"
             },
             {
@@ -111,11 +111,11 @@
               "slug": "guide/pdf-generation"
             },
             {
-              "title": "Custom PDF templates",
+              "title": "Custom templates",
               "slug": "guide/custom-templates"
             },
             {
-              "title": "Private network services",
+              "title": "Private networks",
               "slug": "guide/private-networks"
             },
             {
@@ -129,7 +129,7 @@
           ]
         },
         {
-          "title": "Installation and development",
+          "title": "Install & develop",
           "items": [
             {
               "title": "Docker installation",
@@ -144,15 +144,15 @@
               "slug": "developer-guide"
             },
             {
-              "title": "Development with Docker",
+              "title": "Docker development",
               "slug": "developer/docker"
             },
             {
-              "title": "Development with Nginx and PHP-FPM",
+              "title": "Nginx & PHP-FPM",
               "slug": "developer/manual"
             },
             {
-              "title": "Development with Laravel Herd",
+              "title": "Laravel Herd",
               "slug": "developer/laravel-herd"
             },
             {
@@ -176,7 +176,7 @@
           "title": "Get started",
           "items": [
             {
-              "title": "InvoiceShelf 3 documentation",
+              "title": "Overview",
               "slug": "index"
             },
             {
@@ -184,7 +184,7 @@
               "slug": "installation"
             },
             {
-              "title": "Migration and updates",
+              "title": "Upgrading",
               "slug": "migration-guide"
             }
           ]
@@ -235,10 +235,10 @@
           ]
         },
         {
-          "title": "Company and account",
+          "title": "Company & account",
           "items": [
             {
-              "title": "Company and account settings",
+              "title": "Settings",
               "slug": "guide/settings"
             },
             {
@@ -246,7 +246,7 @@
               "slug": "guide/members"
             },
             {
-              "title": "Your account and security",
+              "title": "Your account",
               "slug": "guide/account-security"
             },
             {
@@ -258,7 +258,7 @@
               "slug": "guide/custom-fields"
             },
             {
-              "title": "Document customization",
+              "title": "Customization",
               "slug": "guide/customization"
             },
             {
@@ -271,7 +271,7 @@
           "title": "Administration",
           "items": [
             {
-              "title": "Email configuration",
+              "title": "Email",
               "slug": "guide/mail"
             },
             {
@@ -279,15 +279,15 @@
               "slug": "guide/pdf-generation"
             },
             {
-              "title": "PDF font packages",
+              "title": "PDF fonts",
               "slug": "guide/fonts"
             },
             {
-              "title": "Custom PDF templates",
+              "title": "Custom templates",
               "slug": "guide/custom-templates"
             },
             {
-              "title": "Private network services",
+              "title": "Private networks",
               "slug": "guide/private-networks"
             },
             {
@@ -305,7 +305,7 @@
           ]
         },
         {
-          "title": "Installation and development",
+          "title": "Install & develop",
           "items": [
             {
               "title": "Docker installation",
@@ -320,15 +320,15 @@
               "slug": "developer-guide"
             },
             {
-              "title": "Development with Docker",
+              "title": "Docker development",
               "slug": "developer/docker"
             },
             {
-              "title": "Development with Nginx and PHP-FPM",
+              "title": "Nginx & PHP-FPM",
               "slug": "developer/manual"
             },
             {
-              "title": "Development with Laravel Herd",
+              "title": "Laravel Herd",
               "slug": "developer/laravel-herd"
             },
             {
