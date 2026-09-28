@@ -1,7 +1,7 @@
 ---
 versions: ['3']
 reviewed_against: c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7
-reviewed_hash: d3680360e46bb80cce274cb499f2a51afc4f121ac10c6791b49ef995c6732cc5
+reviewed_hash: 0f7761676adeac9a316a343d179f234fadc6615f6b016a17704b96fe97eba9dc
 anchor_aliases:
   requirements: redirect-domains
   safety: ai-assistants-mcp
@@ -9,7 +9,7 @@ anchor_aliases:
 
 # AI assistants (MCP)
 
-InvoiceShelf 3 includes an MCP server so a compatible assistant can work with your company’s data through authorized application tools. This is separate from **Ask AI in these docs**, which answers documentation questions and does not access your invoices.
+InvoiceShelf 3 includes an MCP server so a compatible assistant can work with your company’s data through authorized application tools. This is separate from the optional [AI Assistant module](./ai-assistant-module.md) inside InvoiceShelf and from **Ask AI in these docs**, which answers documentation questions and does not access your invoices.
 
 ## Switching it on
 

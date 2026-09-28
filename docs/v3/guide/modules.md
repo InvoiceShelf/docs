@@ -1,7 +1,7 @@
 ---
 versions: ['3']
 reviewed_against: c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7
-reviewed_hash: d72256251aa028f63c168ed41341fe1c538dbe5034a26ba939c34e45e53cdf01
+reviewed_hash: a147389d5088bb1bd1b5db2949100769d8b9f45badb4833108648abad96cdb05
 ---
 
 # Modules
@@ -23,3 +23,16 @@ Installation and activation are administrator tasks. Within a company, **Setting
 ![InvoiceShelf 3 company module settings](/images/v3/modules.webp)
 
 If access changes on the website, reconnect or refresh the installation as the interface instructs. Do not share marketplace tokens or approval codes in screenshots or support messages.
+
+## Official module guides
+
+Optional module workflows have their own guides:
+
+- [Tasks and projects](./tasks-projects.md): projects, task views, timers,
+  timesheets, and preparing invoices from tracked work.
+- [AI Assistant](./ai-assistant-module.md): provider configuration, chat, writing
+  tools, and access to company data.
+
+Install a compatible package first. A module guide does not mean that module is
+bundled or enabled in your installation. For connecting an external assistant,
+use [AI assistants (MCP)](./ai-assistants.md).
