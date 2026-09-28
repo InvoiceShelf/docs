@@ -235,6 +235,19 @@
           ]
         },
         {
+          "title": "Optional modules",
+          "items": [
+            {
+              "title": "Tasks and projects",
+              "slug": "guide/tasks-projects"
+            },
+            {
+              "title": "AI Assistant",
+              "slug": "guide/ai-assistant-module"
+            }
+          ]
+        },
+        {
           "title": "Company & account",
           "items": [
             {

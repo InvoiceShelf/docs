@@ -70,3 +70,16 @@ text, screenshots and the catalog baseline together when reviewing another relea
 PRs run the website's canonical parser exported into `.github/validator/`, with its source revision and checksum in `source.json`. It includes only the parser and public Composer dependencies, so contributors need no access to the private website repo. Refresh it with `php artisan docs:export-validator ../docs/.github/validator` from website, then update its Composer lock when dependencies change. Validated pushes to `master` request an import by exact commit SHA and wait for publication. Failed imports preserve the previous revision. Embeddings are queued separately; ordinary docs and search continue during provider outages.
 
 Configure `CI_DOCS_TOKEN` as a GitHub Actions secret with the same dedicated value in the website deployment. The token authorizes docs imports only. Initial rollout requires the website implementation and worker before this workflow is enabled. Operations, rollback, AI budgets and the old-host cutover are documented in the website's `docs/operations.md`.
+
+## Canonical guide ownership
+
+Keep user-facing guides in this repository. The v3 book includes official-module
+usage under **Optional modules**; modules still need to be installed separately.
+The AI Assistant module guide is distinct from the core MCP connection guide.
+
+Features ahead of the published release belong in [`drafts/`](drafts/README.md).
+Drafts are stored for review but are outside the website importer and AI corpus.
+See [the consolidation inventory](verification/guide-consolidation-2026-09-28.md)
+for source locations and remaining publication work. Repository READMEs may keep
+short introductions and installation pointers. Architecture decisions, contributor
+instructions, and private deployment runbooks stay with the code they describe.

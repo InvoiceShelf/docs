@@ -1293,7 +1293,8 @@
         "release": "3.0.0-alpha.10",
         "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
         "review_sources": [
-          "release source and settled application screen"
+          "release source and settled application screen",
+          "Cross-links to the source-reviewed official module guides; existing release screenshots retained."
         ],
         "screenshots": [
           {
@@ -1308,7 +1309,8 @@
           }
         ],
         "status": "rewritten",
-        "legacy_anchors": []
+        "legacy_anchors": [],
+        "review_date": "2026-09-28"
       },
       "installation": {
         "title": "Installation",
@@ -1551,7 +1553,8 @@
         "review_sources": [
           "config/mcp.php",
           "app/Platform/Mcp",
-          "MCP settings screen"
+          "MCP settings screen",
+          "Cross-links to the source-reviewed official module guides; existing release screenshots retained."
         ],
         "screenshots": [
           {
@@ -1569,8 +1572,80 @@
         "legacy_anchors": [
           "requirements",
           "safety"
-        ]
+        ],
+        "review_date": "2026-09-28"
+      },
+      "guide/tasks-projects": {
+        "title": "Tasks and projects",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_date": "2026-09-28",
+        "review_sources": [
+          "InvoiceShelf/InvoiceShelf@c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7: resources/scripts/extensions/runtime.ts, composer.lock",
+          "InvoiceShelf/module-tasks-projects@94d3e51a2fe4b5c09a350aa8808d4631d6573068: README.md",
+          "InvoiceShelf/module-tasks-projects@94d3e51a2fe4b5c09a350aa8808d4631d6573068: module.json",
+          "InvoiceShelf/module-tasks-projects@94d3e51a2fe4b5c09a350aa8808d4631d6573068: resources/js/registrations/projects.ts",
+          "InvoiceShelf/module-tasks-projects@94d3e51a2fe4b5c09a350aa8808d4631d6573068: resources/js/registrations/tasks.ts",
+          "InvoiceShelf/module-tasks-projects@94d3e51a2fe4b5c09a350aa8808d4631d6573068: resources/js/registrations/billing.ts",
+          "InvoiceShelf/module-tasks-projects@94d3e51a2fe4b5c09a350aa8808d4631d6573068: resources/js/registrations/reports.ts",
+          "InvoiceShelf/module-tasks-projects@94d3e51a2fe4b5c09a350aa8808d4631d6573068: app/Support/ModuleRegistration.php",
+          "InvoiceShelf/module-tasks-projects@94d3e51a2fe4b5c09a350aa8808d4631d6573068: app/Application/TimerService.php",
+          "InvoiceShelf/module-tasks-projects@94d3e51a2fe4b5c09a350aa8808d4631d6573068: app/Application/TimeEntryService.php"
+        ],
+        "module": {
+          "repository": "InvoiceShelf/module-tasks-projects",
+          "version": "0.2.1",
+          "source_commit": "94d3e51a2fe4b5c09a350aa8808d4631d6573068"
+        },
+        "screenshots": [],
+        "status": "source-reviewed",
+        "browser_review": "pending; no connected browser in this session",
+        "legacy_anchors": []
+      },
+      "guide/ai-assistant-module": {
+        "title": "AI Assistant module",
+        "release": "3.0.0-alpha.10",
+        "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+        "review_date": "2026-09-28",
+        "review_sources": [
+          "InvoiceShelf/InvoiceShelf@c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7: resources/scripts/extensions/runtime.ts, composer.lock",
+          "InvoiceShelf/module-ai-assistant@bed8f7a9c23354ca052121cabd9a87745b5e48ef: README.md",
+          "InvoiceShelf/module-ai-assistant@bed8f7a9c23354ca052121cabd9a87745b5e48ef: module.json",
+          "InvoiceShelf/module-ai-assistant@bed8f7a9c23354ca052121cabd9a87745b5e48ef: resources/js/init.ts",
+          "InvoiceShelf/module-ai-assistant@bed8f7a9c23354ca052121cabd9a87745b5e48ef: resources/js/pages/AiConfigurationPage.vue",
+          "InvoiceShelf/module-ai-assistant@bed8f7a9c23354ca052121cabd9a87745b5e48ef: app/Providers/AiAssistantServiceProvider.php",
+          "InvoiceShelf/module-ai-assistant@bed8f7a9c23354ca052121cabd9a87745b5e48ef: app/Application/AiToolRegistry.php"
+        ],
+        "module": {
+          "repository": "InvoiceShelf/module-ai-assistant",
+          "version": "1.0.0",
+          "source_commit": "bed8f7a9c23354ca052121cabd9a87745b5e48ef"
+        },
+        "screenshots": [],
+        "status": "source-reviewed",
+        "browser_review": "pending; no connected browser in this session",
+        "legacy_anchors": []
       }
+    }
+  },
+  "consolidation": {
+    "date": "2026-09-28",
+    "scope": "User-facing guides; engineering specifications and operational runbooks remain with their owning repositories.",
+    "unreleased": [
+      {
+        "path": "drafts/v3/guide/purchasing.md",
+        "source_repository": "InvoiceShelf/InvoiceShelf",
+        "source_commit": "9fba5b7a6753f95a2cedd1d92947c7570aeff184",
+        "pull_request": 903,
+        "published": false
+      }
+    ],
+    "version_exclusions": {
+      "2": [
+        "guide/tasks-projects",
+        "guide/ai-assistant-module",
+        "guide/purchasing"
+      ]
     }
   }
 }
