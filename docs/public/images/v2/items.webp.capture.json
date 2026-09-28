@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "app": "v2",
+  "route": "/admin/items",
+  "recipe": "v2-items",
+  "fixture": "v2-realistic-2026-09-01",
+  "source_revision": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+  "source_version": "2.4.6",
+  "source_dirty": false,
+  "captured_at": "2026-09-27T11:46:33.348Z",
+  "viewport": {
+    "width": 1600,
+    "height": 1000
+  },
+  "scale": 2,
+  "theme": "light",
+  "browser": "149.0.7827.55",
+  "sha256": "d9016a586988f127a778389e2d897d0b2b99aa38b6217f60f49c8a5ae8caa37f"
+}

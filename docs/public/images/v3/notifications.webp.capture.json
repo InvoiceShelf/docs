@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "app": "v3",
+  "route": "/admin/settings/notifications",
+  "recipe": "v3-notifications",
+  "fixture": "v3-realistic-2026-09-01",
+  "source_revision": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+  "source_version": "3.0.0-alpha.10",
+  "source_dirty": false,
+  "captured_at": "2026-09-27T11:47:24.395Z",
+  "viewport": {
+    "width": 1600,
+    "height": 1000
+  },
+  "scale": 2,
+  "theme": "light",
+  "browser": "149.0.7827.55",
+  "sha256": "454f78207a7ab6754bbd6824f4cfb386b6d612a6f58c2dc0a326e77a94d3ded4"
+}

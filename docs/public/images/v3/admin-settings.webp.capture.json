@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "app": "v3",
+  "route": "/admin/administration/settings/mail-configuration",
+  "recipe": "v3-admin-settings",
+  "fixture": "v3-realistic-2026-09-01",
+  "source_revision": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+  "source_version": "3.0.0-alpha.10",
+  "source_dirty": false,
+  "captured_at": "2026-09-27T11:47:49.906Z",
+  "viewport": {
+    "width": 1600,
+    "height": 1000
+  },
+  "scale": 2,
+  "theme": "light",
+  "browser": "149.0.7827.55",
+  "sha256": "070fe1695a9f6b1c7c1c7ed1ead5e1362014503c96f2f82e84e2630992fc7c9f"
+}

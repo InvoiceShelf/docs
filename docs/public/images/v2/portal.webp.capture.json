@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "app": "v2",
+  "route": "/demo-company/customer/dashboard",
+  "recipe": "v2-portal",
+  "fixture": "v2-realistic-2026-09-01",
+  "source_revision": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+  "source_version": "2.4.6",
+  "source_dirty": false,
+  "captured_at": "2026-09-27T11:51:03.724Z",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "scale": 2,
+  "theme": "light",
+  "browser": "149.0.7827.55",
+  "sha256": "3e3e059939154b84cfc7cf5bb378a206a94d6a65ec9e072daab491492d023b74"
+}

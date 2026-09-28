@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "app": "v3",
+  "route": "/admin/invoices/1/view",
+  "recipe": "v3-invoice",
+  "fixture": "v3-realistic-2026-09-01",
+  "source_revision": "d133dfcb76b458849a371388690004ac86e73379",
+  "source_dirty": false,
+  "captured_at": "2026-09-27T10:22:38.626Z",
+  "viewport": {
+    "width": 1600,
+    "height": 1000
+  },
+  "scale": 2,
+  "theme": "light",
+  "browser": "149.0.7827.55",
+  "sha256": "fd6f63f40e0af7ed654e0652cae35f93583c714d8ed1e556722c6dbd89e826a1"
+}

@@ -23,3 +23,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+# Standalone public validator dependencies
+/.github/validator/vendor/

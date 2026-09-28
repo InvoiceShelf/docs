@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "app": "v3",
+  "route": "/admin/items/create",
+  "recipe": "v3-item-create",
+  "fixture": "v3-realistic-2026-09-01",
+  "source_revision": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+  "source_version": "3.0.0-alpha.10",
+  "source_dirty": false,
+  "captured_at": "2026-09-27T11:46:41.661Z",
+  "viewport": {
+    "width": 1600,
+    "height": 1000
+  },
+  "scale": 2,
+  "theme": "light",
+  "browser": "149.0.7827.55",
+  "sha256": "0a8edef6947987aa84c4713072d52f438c01be7dfdb1a5cf044a4d7613900e26"
+}

@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "app": "v3",
+  "route": "/admin/settings/tax-types",
+  "recipe": "v3-taxes",
+  "fixture": "v3-realistic-2026-09-01",
+  "source_revision": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+  "source_version": "3.0.0-alpha.10",
+  "source_dirty": false,
+  "captured_at": "2026-09-27T11:47:16.197Z",
+  "viewport": {
+    "width": 1600,
+    "height": 1000
+  },
+  "scale": 2,
+  "theme": "light",
+  "browser": "149.0.7827.55",
+  "sha256": "f67f9109668c130a217ab2ca1c2090d062ca9a67c2f8553eaa9a2c93c378f99d"
+}

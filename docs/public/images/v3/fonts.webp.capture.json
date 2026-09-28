@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "app": "v3",
+  "route": "/admin/administration/settings/fonts",
+  "recipe": "v3-fonts",
+  "fixture": "v3-realistic-2026-09-01",
+  "source_revision": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+  "source_version": "3.0.0-alpha.10",
+  "source_dirty": false,
+  "captured_at": "2026-09-27T11:53:41.335Z",
+  "viewport": {
+    "width": 1600,
+    "height": 1000
+  },
+  "scale": 2,
+  "theme": "light",
+  "browser": "149.0.7827.55",
+  "sha256": "e4d37f45315840663064c106d65c6fc49d36d6f5c024ff284ac5c32bca073d63"
+}

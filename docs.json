@@ -1,0 +1,381 @@
+{
+  "schema": 2,
+  "default": "3",
+  "latest": "3",
+  "versions": {
+    "2": {
+      "label": "v2 — Stable",
+      "release": "2.4.6",
+      "source_commit": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+      "navigation": [
+        {
+          "title": "Get started",
+          "items": [
+            {
+              "title": "Overview",
+              "slug": "index"
+            },
+            {
+              "title": "Installation",
+              "slug": "installation"
+            },
+            {
+              "title": "Upgrading",
+              "slug": "migration-guide"
+            }
+          ]
+        },
+        {
+          "title": "Daily work",
+          "items": [
+            {
+              "title": "Dashboard",
+              "slug": "guide/dashboard"
+            },
+            {
+              "title": "Customers",
+              "slug": "guide/customers"
+            },
+            {
+              "title": "Customer portal",
+              "slug": "guide/customer-portal"
+            },
+            {
+              "title": "Items",
+              "slug": "guide/items"
+            },
+            {
+              "title": "Estimates",
+              "slug": "guide/estimates"
+            },
+            {
+              "title": "Invoices",
+              "slug": "guide/invoices"
+            },
+            {
+              "title": "Recurring invoices",
+              "slug": "guide/recurring-invoices"
+            },
+            {
+              "title": "Payments",
+              "slug": "guide/payments"
+            },
+            {
+              "title": "Expenses",
+              "slug": "guide/expenses"
+            },
+            {
+              "title": "Reports",
+              "slug": "guide/reports"
+            }
+          ]
+        },
+        {
+          "title": "Company & account",
+          "items": [
+            {
+              "title": "Settings",
+              "slug": "guide/settings"
+            },
+            {
+              "title": "Users and roles",
+              "slug": "guide/members"
+            },
+            {
+              "title": "Taxes",
+              "slug": "guide/taxes"
+            },
+            {
+              "title": "Custom fields",
+              "slug": "guide/custom-fields"
+            },
+            {
+              "title": "Customization",
+              "slug": "guide/customization"
+            },
+            {
+              "title": "Modules",
+              "slug": "guide/modules"
+            }
+          ]
+        },
+        {
+          "title": "Administration",
+          "items": [
+            {
+              "title": "Email",
+              "slug": "guide/mail"
+            },
+            {
+              "title": "PDF generation",
+              "slug": "guide/pdf-generation"
+            },
+            {
+              "title": "Custom templates",
+              "slug": "guide/custom-templates"
+            },
+            {
+              "title": "Private networks",
+              "slug": "guide/private-networks"
+            },
+            {
+              "title": "File storage",
+              "slug": "guide/file-disk"
+            },
+            {
+              "title": "Backups",
+              "slug": "guide/backups"
+            }
+          ]
+        },
+        {
+          "title": "Install & develop",
+          "items": [
+            {
+              "title": "Docker installation",
+              "slug": "install/docker"
+            },
+            {
+              "title": "Manual installation",
+              "slug": "install/manual"
+            },
+            {
+              "title": "Developer setup",
+              "slug": "developer-guide"
+            },
+            {
+              "title": "Docker development",
+              "slug": "developer/docker"
+            },
+            {
+              "title": "Nginx & PHP-FPM",
+              "slug": "developer/manual"
+            },
+            {
+              "title": "Laravel Herd",
+              "slug": "developer/laravel-herd"
+            },
+            {
+              "title": "Translations",
+              "slug": "translation-guide"
+            },
+            {
+              "title": "Mobile access",
+              "slug": "mobile"
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "label": "v3 — Latest (Alpha)",
+      "release": "3.0.0-alpha.10",
+      "source_commit": "c4f6f8af2163fcc3a0c97d2046fcf22c1d47d0e7",
+      "navigation": [
+        {
+          "title": "Get started",
+          "items": [
+            {
+              "title": "Overview",
+              "slug": "index"
+            },
+            {
+              "title": "Installation",
+              "slug": "installation"
+            },
+            {
+              "title": "Upgrading",
+              "slug": "migration-guide"
+            }
+          ]
+        },
+        {
+          "title": "Daily work",
+          "items": [
+            {
+              "title": "Dashboard",
+              "slug": "guide/dashboard"
+            },
+            {
+              "title": "Customers",
+              "slug": "guide/customers"
+            },
+            {
+              "title": "Customer portal",
+              "slug": "guide/customer-portal"
+            },
+            {
+              "title": "Items",
+              "slug": "guide/items"
+            },
+            {
+              "title": "Estimates",
+              "slug": "guide/estimates"
+            },
+            {
+              "title": "Invoices",
+              "slug": "guide/invoices"
+            },
+            {
+              "title": "Recurring invoices",
+              "slug": "guide/recurring-invoices"
+            },
+            {
+              "title": "Payments",
+              "slug": "guide/payments"
+            },
+            {
+              "title": "Expenses",
+              "slug": "guide/expenses"
+            },
+            {
+              "title": "Reports",
+              "slug": "guide/reports"
+            }
+          ]
+        },
+        {
+          "title": "Company & account",
+          "items": [
+            {
+              "title": "Settings",
+              "slug": "guide/settings"
+            },
+            {
+              "title": "Members and roles",
+              "slug": "guide/members"
+            },
+            {
+              "title": "Your account",
+              "slug": "guide/account-security"
+            },
+            {
+              "title": "Taxes",
+              "slug": "guide/taxes"
+            },
+            {
+              "title": "Custom fields",
+              "slug": "guide/custom-fields"
+            },
+            {
+              "title": "Customization",
+              "slug": "guide/customization"
+            },
+            {
+              "title": "Modules",
+              "slug": "guide/modules"
+            }
+          ]
+        },
+        {
+          "title": "Administration",
+          "items": [
+            {
+              "title": "Email",
+              "slug": "guide/mail"
+            },
+            {
+              "title": "PDF generation",
+              "slug": "guide/pdf-generation"
+            },
+            {
+              "title": "PDF fonts",
+              "slug": "guide/fonts"
+            },
+            {
+              "title": "Custom templates",
+              "slug": "guide/custom-templates"
+            },
+            {
+              "title": "Private networks",
+              "slug": "guide/private-networks"
+            },
+            {
+              "title": "File storage",
+              "slug": "guide/file-disk"
+            },
+            {
+              "title": "Backups",
+              "slug": "guide/backups"
+            },
+            {
+              "title": "AI assistants (MCP)",
+              "slug": "guide/ai-assistants"
+            }
+          ]
+        },
+        {
+          "title": "Install & develop",
+          "items": [
+            {
+              "title": "Docker installation",
+              "slug": "install/docker"
+            },
+            {
+              "title": "Manual installation",
+              "slug": "install/manual"
+            },
+            {
+              "title": "Developer setup",
+              "slug": "developer-guide"
+            },
+            {
+              "title": "Docker development",
+              "slug": "developer/docker"
+            },
+            {
+              "title": "Nginx & PHP-FPM",
+              "slug": "developer/manual"
+            },
+            {
+              "title": "Laravel Herd",
+              "slug": "developer/laravel-herd"
+            },
+            {
+              "title": "Translations",
+              "slug": "translation-guide"
+            },
+            {
+              "title": "Mobile access",
+              "slug": "mobile"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "redirects": {
+    "developer-guide": "v2/developer-guide",
+    "developer/docker": "v2/developer/docker",
+    "developer/laravel-herd": "v2/developer/laravel-herd",
+    "developer/manual": "v3/developer/manual",
+    "guide/ai-assistants": "v3/guide/ai-assistants",
+    "guide/backups": "v2/guide/backups",
+    "guide/custom-fields": "v2/guide/custom-fields",
+    "guide/custom-templates": "v3/guide/custom-templates",
+    "guide/customer-portal": "v2/guide/customer-portal",
+    "guide/customers": "v2/guide/customers",
+    "guide/customization": "v2/guide/customization",
+    "guide/dashboard": "v2/guide/dashboard",
+    "guide/estimates": "v2/guide/estimates",
+    "guide/expenses": "v2/guide/expenses",
+    "guide/file-disk": "v2/guide/file-disk",
+    "guide/invoices": "v2/guide/invoices",
+    "guide/items": "v2/guide/items",
+    "guide/mail": "v3/guide/mail",
+    "guide/payments": "v2/guide/payments",
+    "guide/pdf-generation": "v3/guide/pdf-generation",
+    "guide/private-networks": "v3/guide/private-networks",
+    "guide/recurring-invoices": "v2/guide/recurring-invoices",
+    "guide/reports": "v2/guide/reports",
+    "guide/settings": "v2/guide/settings",
+    "guide/taxes": "v2/guide/taxes",
+    "index": "v3/index",
+    "install/docker": "v2/install/docker",
+    "install/manual": "v2/install/manual",
+    "installation": "v2/installation",
+    "migration-guide": "v2/migration-guide",
+    "mobile": "v2/mobile",
+    "translation-guide": "v2/translation-guide"
+  }
+}

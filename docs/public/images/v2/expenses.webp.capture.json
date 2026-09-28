@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "app": "v2",
+  "route": "/admin/expenses",
+  "recipe": "v2-expenses",
+  "fixture": "v2-realistic-2026-09-01",
+  "source_revision": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+  "source_version": "2.4.6",
+  "source_dirty": false,
+  "captured_at": "2026-09-27T11:46:56.202Z",
+  "viewport": {
+    "width": 1600,
+    "height": 1000
+  },
+  "scale": 2,
+  "theme": "light",
+  "browser": "149.0.7827.55",
+  "sha256": "7dde422bf865ebe5daeced017b2bc6c5650eb0c4920bf4a9badacb1e45f18b5c"
+}

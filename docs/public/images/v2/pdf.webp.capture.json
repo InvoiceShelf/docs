@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "app": "v2",
+  "route": "/admin/settings/pdf-generation",
+  "recipe": "v2-pdf",
+  "fixture": "v2-realistic-2026-09-01",
+  "source_revision": "0287adf6472dd4fe0f6f731c966afcd685086bdb",
+  "source_version": "2.4.6",
+  "source_dirty": false,
+  "captured_at": "2026-09-27T11:47:36.444Z",
+  "viewport": {
+    "width": 1600,
+    "height": 1000
+  },
+  "scale": 2,
+  "theme": "light",
+  "browser": "149.0.7827.55",
+  "sha256": "d209a1cc7f7c5821a101e6862df5e2a835c7bf3f0c18e678b141577208fd5bb4"
+}

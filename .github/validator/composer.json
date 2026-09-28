@@ -1,0 +1,11 @@
+{
+    "name": "invoiceshelf/docs-validator",
+    "description": "Standalone InvoiceShelf Markdown validation",
+    "license": "Elastic-2.0",
+    "require": {
+        "php": "^8.4",
+        "ext-intl": "*",
+        "league/commonmark": "2.8.2",
+        "symfony/yaml": "8.1.6"
+    }
+}

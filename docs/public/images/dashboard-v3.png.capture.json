@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "app": "v3",
+  "route": "/admin/dashboard",
+  "recipe": "v3-dashboard",
+  "fixture": "v3-realistic-2026-09-01",
+  "source_revision": "d133dfcb76b458849a371388690004ac86e73379",
+  "source_dirty": false,
+  "captured_at": "2026-09-27T10:22:26.646Z",
+  "viewport": {
+    "width": 1600,
+    "height": 980
+  },
+  "scale": 2,
+  "theme": "light",
+  "browser": "149.0.7827.55",
+  "sha256": "6f8b9d8a3ebefa1e077f0ba9a5bcb55e8774dbef9c19c243288815055183456a"
+}
