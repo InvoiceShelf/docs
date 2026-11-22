@@ -15,7 +15,9 @@ if not token or not re.fullmatch('[a-f0-9]{40}', commit):
 def request(path, data=None):
     req = urllib.request.Request(BASE + path,
         data=json.dumps(data).encode() if data is not None else None,
-        headers={'Authorization': 'Bearer ' + token, 'Accept': 'application/json', 'Content-Type': 'application/json'})
+        # Cloudflare's Browser Integrity Check refuses urllib's default User-Agent (error 1010).
+        headers={'Authorization': 'Bearer ' + token, 'Accept': 'application/json', 'Content-Type': 'application/json',
+                 'User-Agent': 'InvoiceShelf-docs-publisher/1.0'})
     with urllib.request.urlopen(req, timeout=30) as response:
         return json.load(response)
 
